@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+
+body {
+  color: black;
+  font-family: 'Source Code Pro';
+}
+
+p {
+  font-size: 24px;
+}
+
+p.footer {
+  font-size: 16px;
+}
+
+a:visited {
+  color: blue;
+}
+
+a.superscript {
+  color: black;
+  text-decoration: none;
+}
+
+ul.directoryList {
+  list-style: none;
+  list-style-type: none;
+  padding: 0;
+}
+
+li.directoryItem {
+  margin: 0px 0px 7.5px 0px;
+}
