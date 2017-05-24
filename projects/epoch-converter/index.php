@@ -1,6 +1,6 @@
 <?php
 
-$epoch = $_GET['epoch'] ?? time();
+$epoch = $_GET['epoch'] ? $_GET['epoch'] : time();
 $dt = new DateTime("@$epoch");
 $humanReadableTime = $dt->format('m-d-Y H:i:s T');
 
