@@ -1,12 +1,16 @@
 <?php
 
-$epoch = $_GET['epoch'] ? $_GET['epoch'] : time();
+// Includes parameters
+$page_title = "Epoch Converter";
+
+$epoch = isset($_GET['epoch']) ? $_GET['epoch'] : time();
 $dt = new DateTime("@$epoch");
 $humanReadableTime = $dt->format('m-d-Y H:i:s T');
 
 ?>
 
 <html>
+  <?php include('../../includes/head.php'); ?>
   <head>
     <script>
       window.setInterval(function(){
@@ -19,8 +23,6 @@ $humanReadableTime = $dt->format('m-d-Y H:i:s T');
         currentTimeElem.setAttribute("href", "?epoch=" + newEpoch);
       }
     </script>
-    <title>104101110114121</title>
-    <link rel="stylesheet" type="text/css" href="../../css/style.css">
   </head>
   <body onload="currentTime()">
     <h1>
