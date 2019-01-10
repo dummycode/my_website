@@ -1,0 +1,41 @@
+carpool
+
+An application designed to allow users to locate other people on the road willing to carpool.
+
+svn co https://subversion.assembla.com/svn/dummycode_carpool/carpool/
+
+=============Overview===========
+Get location
+Driver or passenger
+Stats of profiles saved
+From (loc) To (loc)
+Out of way (miles/minutes)
+Payment
+Chat
+Profiles/Verification/Trusted Level/Rated Level
+Upvote/rating system
+First time driver warning/passengers
+Date (time) leaving
+Descriptions
+
+============Server side=========
+User database
+Trip database
+Token database
+Google maps API
+Mobile Apps
+Web version
+Subversion/defect tracking
+
+============Databases===========
+User: id, name, birthday, username, password, verified, verification code, rating, trips driven, trips ridden, status of account
+Trips: id, date, time, start location (address), end location (address), start coords, end coords, driver user id, passenger user id
+Tokens: user id, token, date created, time created, date last used, time last used, where created, where last used
+Resets: user id, reset code, expiration 
+
+===========Deployment===========
+Advertise in one college town/area then spread from there (test town)
+
+===========Pricing==============
+Free with zero advertisements to start
+Advertise taxi companies? (uber)

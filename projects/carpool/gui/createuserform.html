@@ -1,0 +1,17 @@
+<form action="" method="POST" name="createuser">
+<input name="name" type="text" placeholder="name"><br>
+<select name="birthmonth"><option value="default">Month</option>
+<?php for($i = 1; $i < 13; $i++) echo '<option value="' . $i . '">' .  $i . '</option>'; ?>
+</select>
+<select name="birthday"><option value="default">Day</option>
+<?php for($i = 1; $i < 32; $i++) echo '<option value="' . $i . '">' .  $i . '</option>'; ?>
+</select>
+<select name="birthyear"><option value="default">Year</option>
+<?php for($i = date("Y"); $i >= 1900; $i--) echo '<option value="' . $i . '">' .  $i . '</option>'; ?>
+</select><br>
+<input name="username" type="text" placeholder="username" autocorrect="off" autocapitalize="off"><br>
+<input name="password" type="password" placeholder="password"><br>
+<input name="email" type="text" placeholder="email" autocorrect="off" autocapitalize="off"><br>
+<?php echo $resultCreateuser ?>
+<input type="submit" name="createuser" value="Sign Up">
+</form>

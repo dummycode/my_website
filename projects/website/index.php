@@ -4,7 +4,7 @@
 ?>
 
 <html>
-  <? include('../../includes/head.php'); ?>
+  <? include(__DIR__ . '/../../includes/head.php'); ?>
   <body>
     <h1>
       Website

@@ -5,15 +5,78 @@ body {
   font-family: 'Source Code Pro';
 }
 
-p {
-  font-size: 20px;
+.article {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
-p.footer {
+.header {
+  text-align: center;
+  width: 100%;
+}
+
+.header h1 {
+  margin-bottom: 0px;
+}
+
+.header p.pwd {
+  margin: 0px;
+  font-size: 16px;
+}
+
+a.title {
+  text-decoration: none;
+  color: black;
+}
+
+a.title:visited {
+  color: black;
+}
+
+.nav li {
+  text-align: justify;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.nav:after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+}
+.nav li {
+  display: inline-block;
+}
+
+.body {
+  width: 75%;
+  margin: auto;
+  flex-grow: 1;
+  max-width: 750px;
+  margin-top: 15px;
+}
+
+.superfooter {
+  width: 75%;
+  margin: auto;
+  text-align: center;
+}
+
+.body p {
+  font-size: 14px;
+  margin-top: 0px;
+}
+
+.body p.footer {
   font-size: 12px;
   padding-top: 1px;
   padding-bottom: 1px;
   margin: 0;
+}
+
+.superfooter p {
+  font-size: 12px;
 }
 
 a:visited {
@@ -32,5 +95,26 @@ ul.directoryList {
 }
 
 li.directoryItem {
-  margin: 0px 0px 7.5px 0px;
+  margin: 0px 0px 5px 0px;
+  font-size: 14px;
+}
+
+.pwd {
+  padding: 0px;
+}
+
+img.headshot {
+  display: block;
+  height: 250px;
+  margin: auto;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+img.blog-inline {
+  display: block;
+  height: 250px;
+  margin: auto;
+  margin-bottom: 10px;
+  border-radius: 5px;
 }

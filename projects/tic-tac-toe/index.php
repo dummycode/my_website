@@ -4,7 +4,7 @@
 ?>
 
 <html>
-  <?php include('../../includes/head.php'); ?>
+  <?php include(__DIR__ . '/../../includes/head.php'); ?>
   <body>
     <h1>
       Tic Tac Toe
