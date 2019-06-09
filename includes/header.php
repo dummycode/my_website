@@ -9,6 +9,7 @@
         <?php echo $page_title ?>
     </p>
     <ul class="nav">
+        <li><a href="/">/home</a></li>
         <li><a href="/projects">/projects</a></li>
         <li><a href="/blog/tech">/blog/tech</a></li>
         <li><a href="/blog/fun">/blog/fun</a></li>

@@ -1,5 +1,5 @@
 <?php
-$page_title = "Root";
+$page_title = "Home";
 $selected_page = "home";
 $last_updated = 1545939450;
 $pwd = '/';
@@ -15,9 +15,9 @@ $pwd = '/';
       <!-- START OF BODY -->
       <div class="body">
         <p>
-          Welcome to my site, it is currently very bland and a WIP<sup style="font-size:12px">[<a class="superscript" href="#footer-1">1</a>]</sup>.
+          Welcome to the homepage of my site, it is currently very bland and a WIP<sup style="font-size:12px">[<a class="superscript" href="#footer-1">1</a>]</sup>.
           My site consists of a projects archive and two blogs – a technical one and my personal one. Visit the about me page to learn more about who the heck 104101110114121 is.
-          Just like every single one of my projects<sup style="font-size:12px">[<a class="superscript" href="#footer-2">2</a>]</sup>, this site is also open sourced. View the source <a href="http://github.com/dummycode/Website">here</a>.
+          Just like every single one of my projects<sup style="font-size:12px">[<a class="superscript" href="#footer-2">2</a>]</sup>, this site is also open sourced. View the source <a href="http://github.com/dummycode/my-website">here</a>.
         </p>
         <p class="footer" id="footer-1">
           [1] Work in progress
