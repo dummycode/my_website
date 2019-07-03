@@ -24,7 +24,7 @@ $page_title = "Museum Mayhem";
                   <a href="#README">README</a>
                 </li>
                 <li class="directoryItem">
-                  <a href="demo">demo</a>
+                  <a href="http://github.com/dummycode/museum-mayhem">src</a>
                 </li>
             </ul>
         </div>
