@@ -11,7 +11,7 @@ $page_title = "Running of the Bulls"
         <!-- START OF BODY -->
         <div class="body">
             <div class="main">
-                <img src="https://104101110114121.s3.us-east-2.amazonaws.com/images/rotb.jpeg" class="blog-inline" />
+                <img src="https://104101110114121.s3.us-east-2.amazonaws.com/images/rotb.jpeg" class="blog__image--md" />
                 <p>
                     I want you to picture a 500kg bull chasing you. Now, imagine it with sharp horns. Now, multiply it. By six to be exact.
                     Now, place yourself in a small, crowded street with a thousand other people.
