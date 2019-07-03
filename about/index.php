@@ -15,7 +15,7 @@ $pwd = '/about'
         <!-- START OF BODY -->
         <div class="body">
             <div class="main">
-                <img src="../resources/img/me.JPG" class="headshot" />
+                <img src="https://104101110114121.s3.us-east-2.amazonaws.com/images/rotb.jpeg" class="headshot" />
                 <p>
                     Hi. Yep, that's me. My name is Henry Harris. I am currently at 3rd year Computer Science major at the Georgia Institute of Technology, better known as Georgia Tech.
                     I am also a candidate for a minor in Computing and Business through the Denning Technology and Management program.
