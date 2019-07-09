@@ -1,4 +1,4 @@
-css/style.css
-css/.sass-cache
-css/*.map
+assets/style.css
+assets/style.css.map
+assets/stylesheets/.sass-cache
 .DS_STORE

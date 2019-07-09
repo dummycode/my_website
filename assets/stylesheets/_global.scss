@@ -1,0 +1,62 @@
+body {
+  color: #fff;
+  color: rgba(0, 0, 0, 0.87);
+  font-family: 'Open Sans', 'Helvetica', sans-serif;
+  line-height: 1.2;
+
+  p {
+    font-size: 32px;
+
+    @include sm {
+      font-size: 20px;
+    }
+  }
+
+  a {
+    color: rgb(0, 0, 238);
+  }
+
+  a:active {
+    color: rgb(0, 0, 238);
+  }
+
+  a:visited {
+    color: rgb(0, 0, 238);
+  }
+}
+
+.container {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+}
+
+.content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  margin-bottom: 150px;
+}
+
+.main-icon {
+  font-size: 216px;
+
+  @include sm {
+    font-size: 108px;
+  }
+}
+
+.footer {
+  margin-top: auto;
+  text-align: center;
+  width: 100%;
+
+  p {
+    font-size: 12px;
+  }
+}
