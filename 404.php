@@ -10,7 +10,7 @@
     <div class="container">
       <div class="content">
         <i class="fas fa-exclamation-triangle main-icon"></i>
-        <p>That page wasn't found. Click <a href="/">here</a> to return to the homepage.</p>
+        <p>That page was not found. Click <a href="/">here</a> to return to the homepage.</p>
       </div>
       <div class="footer">
         <p>
