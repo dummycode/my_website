@@ -1,51 +1,33 @@
 body {
-  color: #fff;
-  color: rgba(0, 0, 0, 0.87);
+  color: $darkest_gray;
   font-family: 'Open Sans', 'Helvetica', sans-serif;
   line-height: 1.2;
 
-  p {
-    font-size: 32px;
+  h1 {
+    font-size: 48px;
 
-    @include sm {
-      font-size: 20px;
+    @include md-down {
+      font-size: 64px;
+    }
+  }
+
+  p {
+    font-size: 24px;
+
+    @include md-down {
+      font-size: 32px;
     }
   }
 
   a {
-    color: rgb(0, 0, 238);
+    color: $darkest_gray;
   }
 
   a:active {
-    color: rgb(0, 0, 238);
+    color: $darkest_gray;
   }
 
-  a:visited {
-    color: rgb(0, 0, 238);
+  a:hover {
+    color: $light_blue;
   }
-}
-
-
-.sidebar {
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 25%;
-  display: flex;
-  flex-direction: column;
-
-  position: fixed;
-
-  align-items: center;
-
-  background-color: red;
-}
-
-.section {
-  height: 300px;
-}
-
-.body {
-  display: relative;
-  margin-left: 30%;
 }
