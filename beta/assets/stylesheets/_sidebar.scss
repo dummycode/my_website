@@ -14,26 +14,39 @@
   background-color: $lightest_gray;
 
   @include md-down {
-    height: 25vh;
+    height: 376px;
     width: 100vw;
     position: absolute;
   }
-}
 
-.sidebar-title {
-  margin-top: 25vh;
-  line-height: 1;
+  &__title {
+    margin-top: 20px;
+    line-height: 1;
 
-  @include md-down {
-    margin-top: 2.5vh;
+    @include md-down {
+      h1 {
+        margin: 0;
+      }
+    }
 
-    h1 {
-      margin: 0;
+    a {
+      text-decoration: none;
     }
   }
 
-  a {
-    text-decoration: none;
+  &__image {
+    margin-top: 15vh;
+
+    @include md-down {
+      margin-top: 20px;
+    }
+
+    img {
+      object-fit: cover;
+      border-radius: 50%;
+      height: 200px;
+      width: 200px;
+    }
   }
 }
 

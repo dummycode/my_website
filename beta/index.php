@@ -8,8 +8,11 @@
   </head>
   <body>
     <div class="sidebar">
-      <div class="sidebar-title">
-        <a href="/"><h1>Henry Harris</h1></a>
+      <div class="sidebar__image">
+        <img src="https://104101110114121.s3.us-east-2.amazonaws.com/images/me.jpeg">
+      </div>
+      <div class="sidebar__title">
+        <h1>Henry Harris</h1>
       </div>
       <div class="sidebar-nav">
         <a href="/blog" class="sidebar-nav__link">Blog</a>
