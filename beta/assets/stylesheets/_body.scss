@@ -12,7 +12,8 @@
 .section {
   height: 50vh;
   padding: 1em 0;
-  border-bottom: solid green;
+  border-bottom: solid $green;
+  border-width: 2px;
   overflow: hidden;
 
   &:last-child {
