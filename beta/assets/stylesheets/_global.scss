@@ -20,11 +20,12 @@ body {
   }
 
   a {
-    color: $darkest_gray;
+    color: $blue;
+    text-decoration: none;
   }
 
   a:active {
-    color: $darkest_gray;
+    color: $blue;
   }
 
   a:hover {
