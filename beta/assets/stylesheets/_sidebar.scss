@@ -14,7 +14,7 @@
   background-color: $lightest_gray;
 
   @include md-down {
-    height: 426px;
+    height: 376px;
     width: 100vw;
     position: absolute;
   }
@@ -30,7 +30,12 @@
     }
 
     a {
+      color: $darkest_gray;
       text-decoration: none;
+    }
+
+    a:hover {
+      color: $darkest_gray;
     }
   }
 
@@ -44,8 +49,8 @@
     img {
       object-fit: cover;
       border-radius: 50%;
-      height: 250px;
-      width: 250px;
+      height: 200px;
+      width: 200px;
     }
   }
 }
@@ -82,7 +87,7 @@
     flex-direction: column;
     margin-top: auto;
     align-items: center;
-    padding: 100px 0 10px 0;
+    padding: 10px 0 10px 0;
 
     &__message {
       font-size: 12px;
@@ -96,9 +101,10 @@
 
     display: flex;
     flex-direction: column;
-    width: 100vw;
+    margin-top: auto;
+    width: 100%;
     align-items: center;
-    padding-bottom: 50px;
+    padding: 10px 0;
   }
 }
 

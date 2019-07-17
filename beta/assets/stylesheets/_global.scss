@@ -6,12 +6,15 @@ body {
   color: $darkest_gray;
   font-family: 'Open Sans', 'Helvetica', sans-serif;
   line-height: 1.2;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 
   h1 {
-    font-size: 48px;
+    font-size: 40px;
 
     @include md-down {
-      font-size: 64px;
+      font-size: 56px;
     }
   }
 
