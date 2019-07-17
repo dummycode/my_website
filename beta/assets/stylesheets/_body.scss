@@ -6,7 +6,7 @@
   flex: 1;
   padding-top: 30px;
 
-  @include sm-down {
+  @include md-down {
     margin: 0 5%;
     padding-top: 376px;
   }
@@ -32,7 +32,7 @@
     font-weight: 600;
     margin-bottom: 10px;
 
-    @include sm-down {
+    @include md-down {
       font-size: 40px;
     }
   }

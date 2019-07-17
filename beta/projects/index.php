@@ -28,37 +28,37 @@
         <div class="row">
           <div class="col-sm-12 col-md-6 col-lg-4 project-card">
             <div class="project-card__container">
-              <div class="project-card__title">Quick Queue</div>
-              <div class="project-card__description">This is a description of the Quick Queue project. It should be no longer than 200 characters.</div>
+              <h2 class="project-card__title">Quick Queue</h2>
+              <p class="project-card__description">This is a description of the Quick Queue project. It should be no longer than 200 characters.</p>
               <div class="project-card__languages">
-                <div class="language-tag">JavaScript</div>
+                <p class="language-tag">JavaScript</p>
               </div>
             </div>
           </div>
           <div class="col-sm-12 col-md-6 col-lg-4 project-card">
             <div class="project-card__container">
-              <div class="project-card__title">Quick Queue</div>
-              <div class="project-card__description">This is a description of the Quick Queue project. It should be no longer than 200 characters.</div>
+              <h2 class="project-card__title">Quick Queue</h2>
+              <p class="project-card__description">This is a description of the Quick Queue project. It should be no longer than 200 characters.</p>
               <div class="project-card__languages">
-                <div class="language-tag">JavaScript</div>
+                <p class="language-tag">JavaScript</p>
               </div>
             </div>
           </div>
           <div class="col-sm-12 col-md-6 col-lg-4 project-card">
             <div class="project-card__container">
-              <div class="project-card__title">Quick Queue</div>
-              <div class="project-card__description">This is a description of the Quick Queue project. It should be no longer than 200 characters.</div>
+              <h2 class="project-card__title">Quick Queue</h2>
+              <p class="project-card__description">This is a description of the Quick Queue project. It should be no longer than 200 characters.</p>
               <div class="project-card__languages">
-                <div class="language-tag">JavaScript</div>
+                <p class="language-tag">JavaScript</p>
               </div>
             </div>
           </div>
           <div class="col-sm-12 col-md-6 col-lg-4 project-card">
             <div class="project-card__container">
-              <div class="project-card__title">Quick Queue</div>
-              <div class="project-card__description">This is a description of the Quick Queue project. It should be no longer than 200 characters.</div>
+              <h2 class="project-card__title">Quick Queue</h2>
+              <p class="project-card__description">This is a description of the Quick Queue project. It should be no longer than 200 characters.</p>
               <div class="project-card__languages">
-                <div class="language-tag">JavaScript</div>
+                <p class="language-tag">JavaScript</p>
               </div>
             </div>
           </div>

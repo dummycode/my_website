@@ -4,7 +4,7 @@
    }
 }
 
-@mixin sm-down {
+@mixin md-down {
    @media (max-width: #{$screen-md-max}) {
        @content;
    }
