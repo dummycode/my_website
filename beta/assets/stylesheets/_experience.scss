@@ -1,0 +1,34 @@
+.section {
+  &--experience {
+    height: 30vh;
+
+    &__title {
+      font-size: 24px;
+
+      &--bnr {
+        color: $bnr_color;
+      }
+
+      &--sl {
+        color: $sl_color;
+      }
+
+      &--tech {
+        color: $tech_color;
+      }
+
+      &--nedzas {
+        color: $nedzas_color;
+      }
+    }
+
+    &__location {
+      color: $gray;
+      margin-top: 4px;
+    }
+
+    &__job {
+      color: $gray;
+    }
+  }
+}

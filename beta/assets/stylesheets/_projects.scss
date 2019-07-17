@@ -1,0 +1,10 @@
+.project-card {
+  padding: 0;
+
+  &__container {
+    background-color: $lightest_gray;
+    border-radius: 1em;
+    margin: 12px;
+    padding: 8px;
+  }
+}
