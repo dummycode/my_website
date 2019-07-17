@@ -7,13 +7,13 @@
 
   @include md-down {
     margin: 0 5%;
-    padding-top: 426px;
+    padding-top: 376px;
   }
 }
 
 .section {
   height: 50vh;
-  border-bottom: solid $green;
+  border-bottom: solid $light_gray;
   border-width: 2px;
   overflow: hidden;
   padding-top: 30px;
@@ -28,6 +28,35 @@
 
     @include md-down {
       font-size: 40px;
+    }
+  }
+
+  &--experience {
+    height: 30vh;
+
+    &__title {
+      font-size: 24px;
+
+      &--bnr {
+        color: $bnr_color;
+      }
+
+      &--sl {
+        color: $sl_color;
+      }
+
+      &--tech {
+        color: $tech_color;
+      }
+    }
+
+    &__location {
+      color: $gray;
+      margin-top: 4px;
+    }
+
+    &__job {
+      color: $gray;
     }
   }
 }
