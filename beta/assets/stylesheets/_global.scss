@@ -13,7 +13,7 @@ body {
   h1 {
     font-size: 40px;
 
-    @include md-down {
+    @include sm-down {
       font-size: 56px;
     }
   }
@@ -21,7 +21,7 @@ body {
   p {
     font-size: 24px;
 
-    @include md-down {
+    @include sm-down {
       font-size: 32px;
     }
   }
@@ -37,5 +37,6 @@ body {
 
   a:hover {
     color: $blue;
+    text-decoration: none;
   }
 }

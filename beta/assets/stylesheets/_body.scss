@@ -4,8 +4,9 @@
   margin-left: 35%;
   margin-right: 5%;
   flex: 1;
+  padding-top: 30px;
 
-  @include md-down {
+  @include sm-down {
     margin: 0 5%;
     padding-top: 376px;
   }
@@ -18,6 +19,10 @@
   overflow: hidden;
   padding-top: 30px;
 
+  &:first-child {
+    padding-top: 0;
+  }
+
   &:last-child {
     border-bottom: none;
   }
@@ -25,42 +30,10 @@
   &__title {
     font-size: 28px;
     font-weight: 600;
+    margin-bottom: 10px;
 
-    @include md-down {
+    @include sm-down {
       font-size: 40px;
-    }
-  }
-
-  &--experience {
-    height: 30vh;
-
-    &__title {
-      font-size: 24px;
-
-      &--bnr {
-        color: $bnr_color;
-      }
-
-      &--sl {
-        color: $sl_color;
-      }
-
-      &--tech {
-        color: $tech_color;
-      }
-
-      &--nedzas {
-        color: $nedzas_color;
-      }
-    }
-
-    &__location {
-      color: $gray;
-      margin-top: 4px;
-    }
-
-    &__job {
-      color: $gray;
     }
   }
 }
