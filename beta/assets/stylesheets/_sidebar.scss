@@ -20,7 +20,7 @@
   }
 
   &__title {
-    margin-top: 20px;
+    margin: 20px 0;
     line-height: 1;
 
     @include md-down {
@@ -68,7 +68,7 @@
   }
 
   &__link {
-    font-size: 20px;
+    font-size: 28px;
     margin: 10px;
 
     @include md-down {

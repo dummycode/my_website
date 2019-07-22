@@ -11,7 +11,8 @@ body {
   flex-direction: column;
 
   h1 {
-    font-size: 40px;
+    font-size: 48px;
+    margin: 0;
 
     @include md-down {
       font-size: 56px;
@@ -20,6 +21,7 @@ body {
 
   p {
     font-size: 24px;
+    margin: 0;
 
     @include md-down {
       font-size: 32px;
@@ -29,14 +31,14 @@ body {
   a {
     color: $blue;
     text-decoration: none;
-  }
 
-  a:active {
-    color: $blue;
-  }
+    &:active {
+      color: $blue;
+    }
 
-  a:hover {
-    color: $blue;
-    text-decoration: none;
+    &:hover {
+      color: $blue;
+      text-decoration: none;
+    }
   }
 }

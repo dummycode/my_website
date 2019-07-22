@@ -1,10 +1,93 @@
+.projects-favorites {
+
+}
+
 .project-card {
   padding: 0;
 
   &__container {
     background-color: $lightest_gray;
     border-radius: 1em;
+    padding: 8px 16px 8px 16px;
     margin: 12px;
-    padding: 8px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+
+    @include md-down {
+      min-height: 400px;
+    }
+  }
+
+  &__description {
+    flex: 1;
+    font-size: 20px;
+    padding-bottom: 20px;
+
+    @include md-down {
+      font-size: 28px;
+    }
+  }
+
+  &__languages {
+    margin-top: auto;
+    line-height: 1em;
+
+    p {
+      font-size: 16px;
+
+      @include md-down {
+        font-size: 24px;
+      }
+    }
+  }
+
+  a {
+    color: $darkest_gray;
+
+    &:hover {
+      color: $darkest_gray;
+    }
+  }
+}
+
+.language-tag {
+  margin-right: 5px;
+
+  &--js {
+    &::before {
+      color: $color_js;
+      content: '\25CF  ';
+    }
+  }
+
+  &--html {
+    &::before {
+      color: $color_html;
+      content: '\25CF  ';
+    }
+  }
+
+  &--css {
+    &::before {
+      color: $color_css;
+      content: '\25CF  ';
+    }
+  }
+
+  &--php {
+
+  }
+
+  &--java {
+
+  }
+
+  &--python {
+
+  }
+
+  &--c {
+
   }
 }
