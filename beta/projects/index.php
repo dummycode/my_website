@@ -41,8 +41,8 @@
           <div id="projects__westbrook" class="col-sm-12 col-md-6 col-lg-6 project-card"></div>
         </div>
       </div>
-
-      <div id="projects-list" class="projects-list"></div>
+      <div class="hidden">test</div>
+      <div id="projects-list" class="hidden projects-list"></div>
 
     </div>
     <div id="sidebar-footer--mobile" class="sidebar-footer--mobile"></div>

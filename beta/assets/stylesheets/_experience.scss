@@ -1,6 +1,8 @@
 .section {
   &--experience {
-    height: 30vh;
+    height: auto;
+    min-height: 30vh;
+    padding-bottom: 30px;
 
     &__title {
       font-size: 24px;
@@ -39,7 +41,7 @@
       li {
         margin-top: 5px;
         list-style-type: none;
-        
+
         &:first-child {
           padding-top: 0;
         }
