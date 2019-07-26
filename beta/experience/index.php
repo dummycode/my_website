@@ -4,7 +4,7 @@
     <title>Henry Harris</title>
     <link rel="stylesheet" href="/beta/assets/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese">
-    <link rel="stylesheet" href="/beta/assets/style.css">
+    <link rel="stylesheet" href="/beta/assets/css/style.css">
 
     <script src="/beta/assets/js/jquery-3.4.1.min.js"></script>
     <script src="/beta/assets/js/handlebars.runtime-v4.1.2.js"></script>
@@ -26,7 +26,6 @@
         <div class="section__title section--experience__title section--experience__title--bnr">
           <h2>Big Nerd Ranch</h2>
         </div>
-        <div class="section--experience__location">Atlanta, GA</div>
         <div class="section--experience__job">Software Engineer Intern</div>
         <ul class="section--experience__bullets">
           <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
@@ -38,7 +37,6 @@
         <div class="section__title section--experience__title section--experience__title--sl">
           <h2>Seller Labs</h2>
         </div>
-        <div class="section--experience__location">Athens, GA</div>
         <div class="section--experience__job">Software Engineer Intern</div>
         <ul class="section--experience__bullets">
           <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
@@ -50,7 +48,6 @@
         <div class="section__title section--experience__title section--experience__title--tech">
           <h2>Georgia Institute of Technology</h2>
         </div>
-        <div class="section--experience__location">Atlanta, GA</div>
         <div class="section--experience__job">Head Teaching Assistant</div>
         <ul class="section--experience__bullets">
           <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
@@ -61,7 +58,6 @@
         <div class="section__title section--experience__title section--experience__title--nedzas">
           <h2>Nedza's Waffles</h2>
         </div>
-        <div class="section--experience__location">Athens, GA</div>
         <div class="section--experience__job">Co-Founder/Business Development</div>
         <ul class="section--experience__bullets">
           <li>Co-founded a dessert-based waffle company that held an average a 4 pop-up shops per week</li>
