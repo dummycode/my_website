@@ -11,20 +11,15 @@ body {
   flex-direction: column;
 
   h1 {
-    font-size: 48px;
     margin: 0;
-
-    @include md-down {
-      font-size: 56px;
-    }
   }
 
   p {
-    font-size: 24px;
+    font-size: 20px;
     margin: 0;
 
     @include md-down {
-      font-size: 32px;
+      font-size: 24px;
     }
   }
 

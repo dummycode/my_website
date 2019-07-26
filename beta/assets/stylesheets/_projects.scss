@@ -1,5 +1,26 @@
 .projects-favorites {
+}
 
+.projects-list {
+  padding-top: 30px;
+
+  ul {
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+
+  li {
+    padding-top: 10px;
+    list-style-type: none;
+
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+
+  &__list {
+    margin-top: 30px;
+  }
 }
 
 .project-card {
@@ -8,25 +29,65 @@
   &__container {
     background-color: $lightest_gray;
     border-radius: 1em;
-    padding: 8px 16px 8px 16px;
+    padding: 24px;
     margin: 12px;
     min-height: 300px;
+    height: 300px;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 
     @include md-down {
       min-height: 400px;
+    }
+
+    @include sm-down {
+      height: auto;
+    }
+
+    &:before {
+      font-family: "Font Awesome 5 Solid";
+      position: absolute;
+      color: $lighter_gray;
+      left: calc(50% - 75px);
+      top: calc(50% - 75px);
+      height: 150px;
+      width: 150px;
+      font-size: 150px;
+    }
+
+    &--quick-queue:before {
+      content: fa-content($fa-var-list);
+    }
+
+    &--my-website:before {
+      content: fa-content($fa-var-laptop);
+    }
+
+    &--dino:before {
+      content: fa-content($fa-var-gamepad);
+    }
+
+    &--westbrook:before {
+      content: fa-content($fa-var-basketball-ball);
+    }
+  }
+
+  &__title {
+    a {
+      color: $darkest_gray;
+
+      &:hover {
+        color: $darkest_gray;
+      }
     }
   }
 
   &__description {
     flex: 1;
-    font-size: 20px;
     padding-bottom: 20px;
-
-    @include md-down {
-      font-size: 28px;
-    }
+    word-wrap: break-word;
+    z-index: 2;
   }
 
   &__languages {
@@ -41,14 +102,6 @@
       }
     }
   }
-
-  a {
-    color: $darkest_gray;
-
-    &:hover {
-      color: $darkest_gray;
-    }
-  }
 }
 
 .language-tag {
@@ -57,37 +110,41 @@
   &--js {
     &::before {
       color: $color_js;
-      content: '\25CF  ';
+      content: "\25CF  ";
     }
   }
 
   &--html {
     &::before {
       color: $color_html;
-      content: '\25CF  ';
+      content: "\25CF  ";
     }
   }
 
   &--css {
     &::before {
       color: $color_css;
-      content: '\25CF  ';
+      content: "\25CF  ";
     }
   }
 
   &--php {
-
   }
 
   &--java {
-
   }
 
   &--python {
-
+    &::before {
+      color: $color_python;
+      content: "\25CF  ";
+    }
   }
 
   &--c {
-
+    &::before {
+      color: $color_c;
+      content: "\25CF  ";
+    }
   }
 }

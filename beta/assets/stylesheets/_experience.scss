@@ -33,6 +33,17 @@
 
     &__bullets {
       padding-top: 5px;
+      padding-left: 0;
+      margin-bottom: 0;
+
+      li {
+        margin-top: 5px;
+        list-style-type: none;
+        
+        &:first-child {
+          padding-top: 0;
+        }
+      }
     }
   }
 }
