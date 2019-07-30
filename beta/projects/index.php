@@ -33,7 +33,6 @@
     <div id="sidebar" class="sidebar"></div>
 
     <div class="body projects">
-      <h2>Projects</h2>
       <div class="projects-favorites">
         <div class="row">
           <div id="projects__quick-queue" class="col-sm-12 col-md-6 col-lg-6 project-card"></div>

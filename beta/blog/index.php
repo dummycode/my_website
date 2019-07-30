@@ -23,15 +23,18 @@
     <div id="sidebar" class="sidebar"></div>
 
     <div class="body">
-      <h2>Blog</h2>
       <div class="blog-list">
         <ul>
           <li class="blog-list__item">
-            <h4><a href="/beta//blog/2">Using PostgreSQL's JSONB Data Type in Rails</a> <span class="blog-list__tag blog-list__tag--tech"></span></h4>
+            <h3>
+              <a href="/beta/blog/2">Using PostgreSQL's JSONB Data Type in Rails</a><span class="blog-list__tag blog-list__tag--tech"></span>
+            </h3>
             <p class="blog-list__date">July 30th, 2019</p>
           </li>
           <li class="blog-list__item">
-            <h4><a href="/beta/blog/1">Running of The Bulls</a> <span class="blog-list__tag blog-list__tag--fun"></span></h4>
+            <h3>
+              <a href="/beta/blog/1">Running of The Bulls</a><span class="blog-list__tag blog-list__tag--fun"></span>
+            </h3>
             <p class="blog-list__date">December 28th, 2018</p>
           </li>
         </ul>
