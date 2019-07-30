@@ -22,21 +22,30 @@
   <body>
     <div id="sidebar" class="sidebar"></div>
     <div class="body">
-      <div id="about" class="section">
-        <div class="section__title">Me</div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <div id="me" class="section">
+        <div class="section__title">
+          <h2>Me</h2>
+        </div>
+        <p>
+          Hi. My name is Henry Harris. I am currently a 4th year Computer Science student at the Georgia Institute of Technology, better known as Georgia Tech. I am also a candidate for a minor in Computing and Business through the Denning Technology and Management program. At school, most of my time outside of schoolwork is dedicated to being head teaching assistant for CS 2110.
+        </p>
       </div>
-      <div id="experience" class="section">
-        <div class="section__title">Experience</div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <div id="story" class="section">
+        <div class="section__title">
+          <h2>Story</h2>
+        </div>
+        <p>
+          My story with computers began way back when I as a middle schooler, playing Minecraft with my two brothers on our private server. Wanting to write custom server plugins, I started watching <a href="https://www.youtube.com/user/thenewboston">thenewboston</a>'s Java tutorials on YouTube. From the moment I saw the words "Hello World" pop up in my console, I knew programming was for me.
+        </p>
+        <p>
+          Since, I've taken AP Computer Science, chosen Computer Science as my major, gotten heavily involved in the College of Computing, worked two software engineering internships, built countless projects, and to this day I still continue to love it just as much.
+        </p>
       </div>
-      <div id="projects" class="section">
-        <div class="section__title">Projects</div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-      </div>
-      <div id="blog" class="section">
-        <div class="section__title">Blog</div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <div id="hobbies" class="section">
+        <div class="section__title">
+          <h2>Hobbies</h2>
+        </div>
+        <p>In my free time I enjoy exercising and the great outdoors – specifically lifting weights, playing basketball or volleyball, and hiking. I also love to travel the world as evident in my <a href="/beta/blog">blog</a>. My favorite trip ever is the trip to Morocco I took while studying abroad in Barcelona during the summer of 2018. There, we visited Fes, toured the Atlas Mountains, road camels into the Sahara desert where we spent the night in traditional Berber tents, played Moroccan drums with locals in Tingher Province, and navigated the bustling markets of Marrakech.</p>
       </div>
     </div>
     <div id="sidebar-footer--mobile" class="sidebar-footer--mobile"></div>
