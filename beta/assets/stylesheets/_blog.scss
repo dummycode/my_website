@@ -1,0 +1,46 @@
+.blog-list {
+  &__date {
+    color: $gray;
+  }
+
+  &__tag {
+    border-radius: 1em;
+    padding: 0 10px;
+
+    &--tech {
+      background-color: red;
+      &::before {
+        content: 'tech';
+      }
+    }
+
+    &--fun {
+      background-color: green;
+      &::before {
+        content: 'fun';
+      }
+    }
+  }
+
+  ul {
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+
+  li {
+    padding-top: 10px;
+    list-style-type: none;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    a {
+      color: black;
+    }
+
+    a:hover {
+      color: black;
+    }
+  }
+}
