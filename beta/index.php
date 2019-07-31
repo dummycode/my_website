@@ -35,7 +35,7 @@
           <h3>Story</h3>
         </div>
         <p>
-          My story with computers began way back when I as a middle schooler, playing Minecraft with my two brothers on our private server. Wanting to write custom server plugins, I started watching <a href="https://www.youtube.com/user/thenewboston">thenewboston</a>'s Java tutorials on YouTube. From the moment I saw the words "Hello World" pop up in my console, I knew programming was for me.
+          My story with computers began way back when I was a middle schooler, playing Minecraft with my two brothers on our private server. Wanting to write custom server plugins, I started watching <a href="https://www.youtube.com/user/thenewboston">thenewboston</a>'s Java tutorials on YouTube. From the moment I saw the words "Hello World" pop up in my console, I knew programming was for me.
         </p>
         <p>
           Since, I've taken AP Computer Science, chosen Computer Science as my major, gotten heavily involved in the College of Computing, worked two software engineering internships, built countless projects, and to this day I still continue to love it just as much.

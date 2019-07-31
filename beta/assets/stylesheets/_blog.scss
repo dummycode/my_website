@@ -7,16 +7,17 @@
     border-radius: 1em;
     padding: 0 10px;
     margin-left: 5px;
+    color: white;
 
     &--tech {
-      background-color: red;
+      background-color: $red;
       &::before {
         content: 'tech';
       }
     }
 
     &--fun {
-      background-color: green;
+      background-color: $green;
       &::before {
         content: 'fun';
       }
