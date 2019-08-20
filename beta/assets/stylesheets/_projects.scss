@@ -71,6 +71,10 @@
     &--westbrook:before {
       content: fa-content($fa-var-basketball-ball);
     }
+
+    &--sms:before {
+      content: fa-content($fa-var-sms);
+    }
   }
 
   &__title {
