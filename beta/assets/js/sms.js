@@ -1,3 +1,5 @@
+const baseUrl = "https://arcane-taiga-41727.herokuapp.com";
+
 $(function() {
   $("#sms__form").submit(function() {
     $("#sms__form")
@@ -15,11 +17,12 @@ $(function() {
   });
 
   // Populate contact list
+  $(".");
 });
 
 function sendMessage() {
   $.ajax({
-    url: "http://localhost:3000/api/messages/",
+    url: baseUrl + "/api/messages",
     type: "post",
     data: $("#sms__form").serialize(),
     success: function() {
