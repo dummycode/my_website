@@ -1,4 +1,4 @@
-const baseUrl = "https://arcane-taiga-41727.herokuapp.com";
+const baseUrl = "http://localhost:3000";
 
 $(function() {
   $("#sms__form").submit(function() {
@@ -9,7 +9,15 @@ $(function() {
     return false;
   });
 
-  $(".sms__message-field").prop("maxlength", "80");
+  $("#sms__form--contact").submit(function() {
+    $("#sms__form--contact")
+      .find("input[type=submit]")
+      .prop("disabled", true);
+    createContact();
+    return false;
+  });
+
+  $(".sms__message-field").prop("maxlength", "160");
   $(".sms__message-field").bind("input propertychange", function() {
     $("#sms__message-field-count").text(
       `${$(".sms__message-field").val().length}/160`
@@ -17,7 +25,38 @@ $(function() {
   });
 
   // Populate contact list
-  $(".");
+  if ($(".sms-contacts__list").length) {
+    $.ajax({
+      url: baseUrl + "/api/contacts",
+      type: "get",
+      data: [],
+      success: function(response) {
+        const contacts = response.content.data;
+
+        if (contacts.length === 0) {
+          $(".sms-contacts__list").replaceWith(
+            $("<p>").text("No contacts found")
+          );
+        }
+
+        contacts.forEach(function(contact) {
+          const newListItem = $("<li>").data("id", contact.id);
+          const deleteButton = $("<button>")
+            .html("Delete")
+            .addClass("sms-contacts__remove-button")
+            .click(deleteContactHandler);
+
+          newListItem.text(`${contact.name} - ${contact.phone_number}`);
+          newListItem.append(deleteButton);
+
+          $(".sms-contacts__list").append(newListItem);
+        });
+      },
+      error: function() {
+        alert("Failed to fetch contacts");
+      }
+    });
+  }
 });
 
 function sendMessage() {
@@ -36,6 +75,9 @@ function sendMessage() {
       $("#sms__form")
         .find("input[type=submit]")
         .prop("disabled", false);
+      setTimeout(function() {
+        $(".sms__form-result").hide();
+      }, 5000);
     },
     error: function() {
       $(".sms__form-result")
@@ -44,6 +86,59 @@ function sendMessage() {
       $("#sms__form")
         .find("input[type=submit]")
         .prop("disabled", false);
+    }
+  });
+}
+
+function createContact() {
+  $.ajax({
+    url: baseUrl + "/api/contacts",
+    type: "post",
+    data: $("#sms__form--contact").serialize(),
+    success: function() {
+      $(".sms__form-result")
+        .text("Successfully created contact")
+        .show();
+      $("#sms__form--contact")
+        .find("input[type=text], textarea")
+        .val("");
+      $("#sms__form--contact")
+        .find("input[type=submit]")
+        .prop("disabled", false);
+
+      setTimeout(function() {
+        $(".sms__form-result").hide();
+      }, 5000);
+    },
+    error: function() {
+      $(".sms__form-result")
+        .text("Failed to create contact")
+        .show();
+      $("#sms__form--contact")
+        .find("input[type=submit]")
+        .prop("disabled", false);
+    }
+  });
+}
+
+function deleteContactHandler(event) {
+  deleteContact(
+    $(this)
+      .parent()
+      .data("id")
+  );
+}
+
+function deleteContact(id) {
+  $.ajax({
+    url: baseUrl + "/api/contacts/" + id,
+    type: "delete",
+    data: [],
+    success: function() {
+      window.location.replace("/beta/sms/contacts");
+    },
+    error: function() {
+      alert("Failed to delete contact");
     }
   });
 }
