@@ -12,8 +12,14 @@
   <body>
     <div class="sms-contacts">
       <h1>Contacts</h1>
+      <form id="sms__form--contact" class="sms__form">
+        <input type="text" name="name" placeholder="Name"></textarea>
+        <input type="text" name="phone_number" placeholder="Phone number"></textarea>
+        <input type="submit" value="Add">
+        <p class="sms__form-result"></p>
+      </form>
+
       <ul class="sms-contacts__list"></ul>
-      <a href="/beta/sms/contacts/new">Add contact</a>
     </div>
   </body>
 </html>

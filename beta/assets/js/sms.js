@@ -40,16 +40,9 @@ $(function() {
         }
 
         contacts.forEach(function(contact) {
-          const newListItem = $("<li>").data("id", contact.id);
-          const deleteButton = $("<button>")
-            .html("Delete")
-            .addClass("sms-contacts__remove-button")
-            .click(deleteContactHandler);
+          const newContactListItem = renderContactListItem(contact);
 
-          newListItem.text(`${contact.name} - ${contact.phone_number}`);
-          newListItem.append(deleteButton);
-
-          $(".sms-contacts__list").append(newListItem);
+          $(".sms-contacts__list").append(newContactListItem);
         });
       },
       error: function() {
@@ -95,10 +88,12 @@ function createContact() {
     url: baseUrl + "/api/contacts",
     type: "post",
     data: $("#sms__form--contact").serialize(),
-    success: function() {
-      $(".sms__form-result")
-        .text("Successfully created contact")
-        .show();
+    success: function(response) {
+      const contact = response.content.data;
+
+      const newContactListItem = renderContactListItem(contact);
+      $(".sms-contacts__list").prepend(newContactListItem);
+
       $("#sms__form--contact")
         .find("input[type=text], textarea")
         .val("");
@@ -106,9 +101,7 @@ function createContact() {
         .find("input[type=submit]")
         .prop("disabled", false);
 
-      setTimeout(function() {
-        $(".sms__form-result").hide();
-      }, 5000);
+      $(".sms-contacts__list").prepend();
     },
     error: function() {
       $(".sms__form-result")
@@ -141,4 +134,17 @@ function deleteContact(id) {
       alert("Failed to delete contact");
     }
   });
+}
+
+function renderContactListItem(contact) {
+  const newListItem = $("<li>").data("id", contact.id);
+  const deleteButton = $("<button>")
+    .html("Delete")
+    .addClass("sms-contacts__remove-button")
+    .click(deleteContactHandler);
+
+  newListItem.text(`${contact.name} - ${contact.phone_number}`);
+  newListItem.append(deleteButton);
+
+  return newListItem;
 }
