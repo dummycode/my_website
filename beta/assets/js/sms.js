@@ -48,9 +48,18 @@ $(function() {
       },
       error: function(response) {
         $("#sms-contacts__loading").hide();
-        alert(
-          "Failed to fetch contacts: " + response.responseJSON.content.message
-        );
+        if (response.status === 0) {
+          $(".sms-contacts__list").after(
+            $("<p>").text("Failed to connect to server")
+          );
+        } else {
+          $(".sms-contacts__list").after(
+            $("<p>").text(
+              "Failed to fetch contacts: " +
+                response.responseJSON.content.message
+            )
+          );
+        }
       }
     });
   }
@@ -108,11 +117,17 @@ function createContact() {
       $(".sms-contacts__list").prepend();
     },
     error: function(response) {
-      $(".sms__form-result")
-        .text(
-          "Failed to create contact: " + response.responseJSON.content.message
-        )
-        .show();
+      if (response.status === 0) {
+        $(".sms__form-result")
+          .text("Failed to connect to server")
+          .show();
+      } else {
+        $(".sms__form-result")
+          .text(
+            "Failed to create contact: " + response.responseJSON.content.message
+          )
+          .show();
+      }
       $("#sms__form--contact")
         .find("input[type=submit]")
         .prop("disabled", false);
@@ -137,9 +152,13 @@ function deleteContact(id) {
       window.location.replace("/beta/sms/contacts");
     },
     error: function(response) {
-      alert(
-        "Failed to delete contact: " + response.responseJSON.content.message
-      );
+      if (response.status === 0) {
+        alert("Failed to connect to server");
+      } else {
+        alert(
+          "Failed to delete contact: " + response.responseJSON.content.message
+        );
+      }
     }
   });
 }

@@ -11,7 +11,7 @@
   </head>
   <body>
     <div class="sms">
-      <form id="sms__form" class="sms__form">
+      <form id="sms__form" class="sms__form" autocomplete="off">
         <textarea name="message" placeholder="Enter message..." class="sms__message-field"></textarea>
         <span id="sms__message-field-count" class="sms__message-field-count">0/160</span>
         <input type="submit" value="Send">

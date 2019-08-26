@@ -11,7 +11,7 @@
   </head>
   <body>
     <div class="sms">
-      <form id="sms__form--contact" class="sms__form">
+      <form id="sms__form--contact" class="sms__form" autocomplete="off">
         <input type="text" name="name" placeholder="Name"></textarea>
         <input type="text" name="phone_number" placeholder="Phone number"></textarea>
         <input type="submit" value="Add">
