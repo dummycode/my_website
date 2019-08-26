@@ -11,6 +11,7 @@
   </head>
   <body>
     <div class="sms-contacts">
+      <a href="..">Back</a>
       <h1>Contacts</h1>
       <form id="sms__form--contact" class="sms__form" autocomplete="off">
         <input type="text" name="name" placeholder="Name"></textarea>
