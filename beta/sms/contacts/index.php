@@ -19,6 +19,7 @@
         <p class="sms__form-result"></p>
       </form>
 
+      <p id="sms-contacts__loading">Loading contacts...</p>
       <ul class="sms-contacts__list"></ul>
     </div>
   </body>

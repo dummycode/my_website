@@ -31,6 +31,7 @@ $(function() {
       type: "get",
       data: [],
       success: function(response) {
+        $("#sms-contacts__loading").hide();
         const contacts = response.content.data;
 
         if (contacts.length === 0) {
@@ -45,8 +46,11 @@ $(function() {
           $(".sms-contacts__list").append(newContactListItem);
         });
       },
-      error: function() {
-        alert("Failed to fetch contacts");
+      error: function(response) {
+        $("#sms-contacts__loading").hide();
+        alert(
+          "Failed to fetch contacts: " + response.responseJSON.content.message
+        );
       }
     });
   }
@@ -103,9 +107,11 @@ function createContact() {
 
       $(".sms-contacts__list").prepend();
     },
-    error: function() {
+    error: function(response) {
       $(".sms__form-result")
-        .text("Failed to create contact")
+        .text(
+          "Failed to create contact: " + response.responseJSON.content.message
+        )
         .show();
       $("#sms__form--contact")
         .find("input[type=submit]")
@@ -130,8 +136,10 @@ function deleteContact(id) {
     success: function() {
       window.location.replace("/beta/sms/contacts");
     },
-    error: function() {
-      alert("Failed to delete contact");
+    error: function(response) {
+      alert(
+        "Failed to delete contact: " + response.responseJSON.content.message
+      );
     }
   });
 }

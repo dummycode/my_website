@@ -16,6 +16,7 @@
         <span id="sms__message-field-count" class="sms__message-field-count">0/160</span>
         <input type="submit" value="Send">
         <p class="sms__form-result"></p>
+        <p><a href="contacts">Manage contacts</a></p>
       </form>
     </div>
   </body>
