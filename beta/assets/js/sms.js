@@ -1,5 +1,12 @@
 const baseUrl = "http://localhost:3000";
 
+if (
+  window.location.pathname !== "/beta/sms/login/" &&
+  window.sessionStorage.token === undefined
+) {
+  window.location.replace("/beta/sms/login?target=" + window.location.pathname);
+}
+
 $(function() {
   $("#sms__form").submit(function() {
     $("#sms__form")
@@ -24,52 +31,69 @@ $(function() {
     );
   });
 
+  $("#sms__form--login").submit(function() {
+    $("#sms__form--login")
+      .find("input[type=submit]")
+      .prop("disabled", true);
+    login();
+    return false;
+  });
+
   // Populate contact list
   if ($(".sms-contacts__list").length) {
-    $.ajax({
-      url: baseUrl + "/api/contacts",
-      type: "get",
-      data: [],
-      success: function(response) {
-        $("#sms-contacts__loading").hide();
-        const contacts = response.content.data;
-
-        if (contacts.length === 0) {
-          $(".sms-contacts__list").replaceWith(
-            $("<p>").text("No contacts found")
-          );
-        }
-
-        contacts.forEach(function(contact) {
-          const newContactListItem = renderContactListItem(contact);
-
-          $(".sms-contacts__list").append(newContactListItem);
-        });
-      },
-      error: function(response) {
-        $("#sms-contacts__loading").hide();
-        if (response.status === 0) {
-          $(".sms-contacts__list").after(
-            $("<p>").text("Failed to connect to server")
-          );
-        } else {
-          $(".sms-contacts__list").after(
-            $("<p>").text(
-              "Failed to fetch contacts: " +
-                response.responseJSON.content.message
-            )
-          );
-        }
-      }
-    });
+    getContacts();
   }
 });
+
+function getContacts() {
+  $.ajax({
+    url: baseUrl + "/api/contacts",
+    type: "get",
+    data: [],
+    beforeSend: function(xhr) {
+      xhr.setRequestHeader("x-access-token", getAccessToken());
+    },
+    success: function(response) {
+      $("#sms-contacts__loading").hide();
+      const contacts = response.content.data;
+
+      if (contacts.length === 0) {
+        $(".sms-contacts__list").replaceWith(
+          $("<p>").text("No contacts found")
+        );
+      }
+
+      contacts.forEach(function(contact) {
+        const newContactListItem = renderContactListItem(contact);
+
+        $(".sms-contacts__list").append(newContactListItem);
+      });
+    },
+    error: function(response) {
+      $("#sms-contacts__loading").hide();
+      if (response.status === 0) {
+        $(".sms-contacts__list").after(
+          $("<p>").text("Failed to connect to server")
+        );
+      } else {
+        $(".sms-contacts__list").after(
+          $("<p>").text(
+            "Failed to fetch contacts: " + response.responseJSON.content.message
+          )
+        );
+      }
+    }
+  });
+}
 
 function sendMessage() {
   $.ajax({
     url: baseUrl + "/api/messages",
     type: "post",
     data: $("#sms__form").serialize(),
+    beforeSend: function(xhr) {
+      xhr.setRequestHeader("x-access-token", getAccessToken());
+    },
     success: function() {
       $(".sms__form-result")
         .text("Successfully sent message")
@@ -101,6 +125,9 @@ function createContact() {
     url: baseUrl + "/api/contacts",
     type: "post",
     data: $("#sms__form--contact").serialize(),
+    beforeSend: function(xhr) {
+      xhr.setRequestHeader("x-access-token", getAccessToken());
+    },
     success: function(response) {
       const contact = response.content.data;
 
@@ -135,6 +162,38 @@ function createContact() {
   });
 }
 
+function login() {
+  $.ajax({
+    url: baseUrl + "/api/login",
+    type: "post",
+    data: $("#sms__form--login").serialize(),
+    success: function(response) {
+      window.sessionStorage.token = response.content.data.token;
+      window.location.replace(getUrlParameter("target"));
+      $(".sms__form-result")
+        .text("Logged in: " + response.content.data.token)
+        .show();
+      $("#sms__form--login")
+        .find("input[type=submit]")
+        .prop("disabled", false);
+    },
+    error: function(response) {
+      if (response.status === 0) {
+        $(".sms__form-result")
+          .text("Failed to connect to server")
+          .show();
+      } else {
+        $(".sms__form-result")
+          .text("Failed to login: " + response.responseJSON.content.message)
+          .show();
+      }
+      $("#sms__form--login")
+        .find("input[type=submit]")
+        .prop("disabled", false);
+    }
+  });
+}
+
 function deleteContactHandler(event) {
   deleteContact(
     $(this)
@@ -148,6 +207,9 @@ function deleteContact(id) {
     url: baseUrl + "/api/contacts/" + id,
     type: "delete",
     data: [],
+    beforeSend: function(xhr) {
+      xhr.setRequestHeader("x-access-token", getAccessToken());
+    },
     success: function() {
       window.location.replace("/beta/sms/contacts");
     },
@@ -174,4 +236,29 @@ function renderContactListItem(contact) {
   newListItem.append(deleteButton);
 
   return newListItem;
+}
+
+function getAccessToken() {
+  return window.sessionStorage.token; // TODO this is not secure
+}
+
+function getUrlParameter(sParam) {
+  var sPageURL = window.location.search.substring(1),
+    sURLVariables = sPageURL.split("&"),
+    sParameterName,
+    i;
+
+  for (i = 0; i < sURLVariables.length; i++) {
+    sParameterName = sURLVariables[i].split("=");
+
+    if (sParameterName[0] === sParam) {
+      return sParameterName[1] === undefined
+        ? true
+        : decodeURIComponent(sParameterName[1]);
+    }
+  }
+}
+
+function logout() {
+  window.sessionStorage.removeItem("token");
 }
