@@ -5,6 +5,11 @@ if (
   window.sessionStorage.token === undefined
 ) {
   window.location.replace("/beta/sms/login?target=" + window.location.pathname);
+} else if (
+  window.location.pathname === "/beta/sms/login/" &&
+  window.sessionStorage.token !== undefined
+) {
+  window.location.replace("/beta/sms/");
 }
 
 $(function() {
@@ -169,13 +174,7 @@ function login() {
     data: $("#sms__form--login").serialize(),
     success: function(response) {
       window.sessionStorage.token = response.content.data.token;
-      window.location.replace(getUrlParameter("target"));
-      $(".sms__form-result")
-        .text("Logged in: " + response.content.data.token)
-        .show();
-      $("#sms__form--login")
-        .find("input[type=submit]")
-        .prop("disabled", false);
+      window.location.replace(getUrlParameter("target") || "/beta/sms");
     },
     error: function(response) {
       if (response.status === 0) {
