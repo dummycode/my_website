@@ -26,7 +26,7 @@
         <div class="section__title section--experience__title section--experience__title--bnr">
           <h3>Big Nerd Ranch</h3>
         </div>
-        <div class="section--experience__job"><h7>Software Engineer Intern</h7></div>
+        <div class="section--experience__job">Software Engineer Intern</div>
         <ul class="section--experience__bullets">
           <li>Consulted on a client project developing a custom content management system built in Ruby on Rails</li>
           <li>Investigated and optimized multiple memory bloating requests cutting the app’s overall memory usage by 60%</li>
@@ -40,7 +40,7 @@
         <div class="section__title section--experience__title section--experience__title--sl">
           <h3>Seller Labs</h3>
         </div>
-        <div class="section--experience__job"><h7>Software Engineer Intern</h7></div>
+        <div class="section--experience__job">Software Engineer Intern</div>
         <ul class="section--experience__bullets">
           <li>Implemented new features for an internal support system for four different products to increase functionality and effectiveness of customer service teams</li>
           <li>Built features independently from user story to release through database design and migration, creating and updating
@@ -55,7 +55,7 @@
         <div class="section__title section--experience__title section--experience__title--tech">
           <h3>Georgia Institute of Technology</h3>
         </div>
-        <div class="section--experience__job"><h7>Head Teaching Assistant</h7></div>
+        <div class="section--experience__job">Head Teaching Assistant</div>
         <ul class="section--experience__bullets">
           <li>Overhauled entirety of course in coordination with course professor to adhere to new assessment structure and schedule</li>
           <li>Taught recitation twice a week to 50+ students on topics from digital logic, assembly, and C fundamentals</li>
@@ -68,7 +68,7 @@
         <div class="section__title section--experience__title section--experience__title--nedzas">
           <h3>Nedza's Waffles</h3>
         </div>
-        <div class="section--experience__job"><h7>Co-Founder</h7></div>
+        <div class="section--experience__job">Co-Founder</div>
         <ul class="section--experience__bullets">
           <li>Awarded $5,000 through UGA’s Idea Accelerator after pitching product and business plan to a panel of five entrepreneurs</li>
           <li>Managed financials and accounting, created business plans, planned and led catering events, maintained and ordered
