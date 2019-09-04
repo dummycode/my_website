@@ -1,15 +1,15 @@
 const baseUrl = "http://localhost:3000";
 
 if (
-  window.location.pathname !== "/beta/sms/login/" &&
+  window.location.pathname !== "/sms/login/" &&
   window.sessionStorage.token === undefined
 ) {
-  window.location.replace("/beta/sms/login?target=" + window.location.pathname);
+  window.location.replace("/sms/login?target=" + window.location.pathname);
 } else if (
-  window.location.pathname === "/beta/sms/login/" &&
+  window.location.pathname === "/sms/login/" &&
   window.sessionStorage.token !== undefined
 ) {
-  window.location.replace("/beta/sms/");
+  window.location.replace("/sms/");
 }
 
 $(function() {
@@ -174,7 +174,7 @@ function login() {
     data: $("#sms__form--login").serialize(),
     success: function(response) {
       window.sessionStorage.token = response.content.data.token;
-      window.location.replace(getUrlParameter("target") || "/beta/sms");
+      window.location.replace(getUrlParameter("target") || "/sms");
     },
     error: function(response) {
       if (response.status === 0) {
@@ -210,7 +210,7 @@ function deleteContact(id) {
       xhr.setRequestHeader("x-access-token", getAccessToken());
     },
     success: function() {
-      window.location.replace("/beta/sms/contacts");
+      window.location.replace("/sms/contacts");
     },
     error: function(response) {
       if (response.status === 0) {
