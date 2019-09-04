@@ -37,11 +37,11 @@
     <div class="body projects">
       <div class="projects-favorites">
         <div class="row">
+          <div id="projects__sms" class="col-sm-12 col-md-6 col-lg-6 project-card"></div>
           <div id="projects__quick-queue" class="col-sm-12 col-md-6 col-lg-6 project-card"></div>
           <div id="projects__my-website" class="col-sm-12 col-md-6 col-lg-6 project-card"></div>
           <div id="projects__dino" class="col-sm-12 col-md-6 col-lg-6 project-card"></div>
           <div id="projects__westbrook" class="col-sm-12 col-md-6 col-lg-6 project-card"></div>
-          <div id="projects__sms" class="col-sm-12 col-md-6 col-lg-6 project-card"></div>
         </div>
       </div>
       <div id="projects-list" class="hidden projects-list"></div>

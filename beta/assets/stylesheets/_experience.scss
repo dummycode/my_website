@@ -31,6 +31,7 @@
 
     &__job {
       color: $gray;
+      font-weight: bold;
     }
 
     &__bullets {
@@ -40,7 +41,8 @@
 
       li {
         margin-top: 5px;
-        list-style-type: none;
+        list-style-type: square;
+        list-style-position: inside;
 
         &:first-child {
           padding-top: 0;

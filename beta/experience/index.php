@@ -26,44 +26,55 @@
         <div class="section__title section--experience__title section--experience__title--bnr">
           <h3>Big Nerd Ranch</h3>
         </div>
-        <div class="section--experience__job">Software Engineer Intern</div>
+        <div class="section--experience__job"><h7>Software Engineer Intern</h7></div>
         <ul class="section--experience__bullets">
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
+          <li>Consulted on a client project developing a custom content management system built in Ruby on Rails</li>
+          <li>Investigated and optimized multiple memory bloating requests cutting the app’s overall memory usage by 60%</li>
+          <li>Engaged with a third party to perform load testing and in response implemented Rails template caching to reduce average 	page load times by 300%</li>
+          <li>Engineered and implemented multi-index search, providing admins and users a seamless experience managing and 	searching multiple indices</li>
+          <li>Initiated conversation and guided team in re-pointing stories to adhere to good Agile processes and provide the client 	meaningful effort estimates</li>
+
         </ul>
       </div>
       <div class="section section--experience">
         <div class="section__title section--experience__title section--experience__title--sl">
           <h3>Seller Labs</h3>
         </div>
-        <div class="section--experience__job">Software Engineer Intern</div>
+        <div class="section--experience__job"><h7>Software Engineer Intern</h7></div>
         <ul class="section--experience__bullets">
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
+          <li>Implemented new features for an internal support system for four different products to increase functionality and effectiveness of customer service teams</li>
+          <li>Built features independently from user story to release through database design and migration, creating and updating
+          API endpoints, and adding or modifying components in a React/Redux UI</li>
+          <li>Planned, designed, and implemented an affiliate tracking system to accurately track subscriptions, allowing the marketing team to use the data to strategically target markets and ultimately increase revenue</li>
+          <li>Overhauled pulling or pushing customer data from or to a third-party service to eliminate redundant requests and thus reduce server load and decrease operating costs</li>
+          <li>Migrated data and refactored separate billing systems into a central system resulting in a streamlined and improved customer experience</li>
+
         </ul>
       </div>
       <div class="section section--experience">
         <div class="section__title section--experience__title section--experience__title--tech">
           <h3>Georgia Institute of Technology</h3>
         </div>
-        <div class="section--experience__job">Head Teaching Assistant</div>
+        <div class="section--experience__job"><h7>Head Teaching Assistant</h7></div>
         <ul class="section--experience__bullets">
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
+          <li>Overhauled entirety of course in coordination with course professor to adhere to new assessment structure and schedule</li>
+          <li>Taught recitation twice a week to 50+ students on topics from digital logic, assembly, and C fundamentals</li>
+          <li>Organized, led, and managed team of 10 TAs in charge of 250+ students enrolled in the course per semester</li>
+          <li>Designed, authored, and reviewed projects, homework, and tests to effectively evaluate student proficiency</li>
+          <li>Held office hours dedicated to one-on-one student help to strengthen knowledge in course materials and topics</li>
         </ul>
       </div>
       <div class="section section--experience">
         <div class="section__title section--experience__title section--experience__title--nedzas">
           <h3>Nedza's Waffles</h3>
         </div>
-        <div class="section--experience__job">Co-Founder/Business Development</div>
+        <div class="section--experience__job"><h7>Co-Founder</h7></div>
         <ul class="section--experience__bullets">
-          <li>Co-founded a dessert-based waffle company that held an average a 4 pop-up shops per week</li>
-          <li>Awarded $5,000 through UGA's Idea Accelerator after pitching product and business plan to a panel of
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</li>
+          <li>Awarded $5,000 through UGA’s Idea Accelerator after pitching product and business plan to a panel of five entrepreneurs</li>
+          <li>Managed financials and accounting, created business plans, planned and led catering events, maintained and ordered
+inventory, and managed employees</li>
+          <li>Designed and developed a website to promote menu, events, and provide a catering request form to increase revenue</li>
+          <li>Recruited, screened, interviewed, and trained first 10 employees to run events independently</li>
         </ul>
       </div>
     </div>
