@@ -1,0 +1,20 @@
+.error {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  margin-bottom: 150px;
+
+  &__icon {
+    font-size: 216px;
+
+    @include md-down {
+      font-size: 108px;
+    }
+  }
+
+  &__message {
+    margin-top: 20px;
+  }
+}
