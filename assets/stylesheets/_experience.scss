@@ -1,0 +1,52 @@
+.section {
+  &--experience {
+    height: auto;
+    min-height: 30vh;
+    padding-bottom: 30px;
+
+    &__title {
+      font-size: 24px;
+
+      &--bnr {
+        color: $bnr_color;
+      }
+
+      &--sl {
+        color: $sl_color;
+      }
+
+      &--tech {
+        color: $tech_color;
+      }
+
+      &--nedzas {
+        color: $nedzas_color;
+      }
+    }
+
+    &__location {
+      color: $gray;
+      margin-top: 4px;
+    }
+
+    &__job {
+      color: $gray;
+    }
+
+    &__bullets {
+      padding-top: 5px;
+      padding-left: 0;
+      margin-bottom: 0;
+
+      li {
+        margin-top: 5px;
+        list-style-type: square;
+        list-style-position: inside;
+
+        &:first-child {
+          padding-top: 0;
+        }
+      }
+    }
+  }
+}

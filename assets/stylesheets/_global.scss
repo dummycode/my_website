@@ -1,62 +1,43 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  color: #fff;
-  color: rgba(0, 0, 0, 0.87);
-  font-family: 'Open Sans', 'Helvetica', sans-serif;
+  color: $darkest_gray;
+  font-family: 'Montserrat', 'Helvetica', sans-serif;
   line-height: 1.2;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    margin: 0;
+  }
 
   p {
-    font-size: 32px;
+    font-size: 20px;
+    margin: 0;
 
-    @include sm {
-      font-size: 20px;
+    @include md-down {
+      font-size: 24px;
     }
   }
 
   a {
-    color: rgb(0, 0, 238);
-  }
+    color: $blue;
+    text-decoration: none;
 
-  a:active {
-    color: rgb(0, 0, 238);
-  }
+    &:active {
+      color: $blue;
+    }
 
-  a:visited {
-    color: rgb(0, 0, 238);
-  }
-}
-
-.container {
-  align-items: center;
-  display: flex;
-  height: 100vh;
-  justify-content: center;
-  flex-direction: column;
-  width: 100vw;
-}
-
-.content {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  justify-content: center;
-  margin-bottom: 150px;
-}
-
-.main-icon {
-  font-size: 216px;
-
-  @include sm {
-    font-size: 108px;
+    &:hover {
+      color: $blue;
+      text-decoration: none;
+    }
   }
 }
 
-.footer {
-  margin-top: auto;
-  text-align: center;
-  width: 100%;
-
-  p {
-    font-size: 12px;
-  }
+.hidden {
+  display: none;
 }

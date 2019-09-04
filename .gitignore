@@ -1,4 +1,7 @@
 assets/style.css
 assets/style.css.map
-assets/stylesheets/.sass-cache
+.sass-cache
+beta/assets/style.css
+beta/assets/style.css.map
+beta/assets/js/templatesCompiled.js
 .DS_STORE

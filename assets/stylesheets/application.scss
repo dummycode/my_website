@@ -1,3 +1,15 @@
-@import 'mixins';
-@import 'variables';
-@import 'global';
+@import "lib/fa/fontawesome.scss";
+@import "lib/fa/solid.scss";
+@import "lib/fa/brands.scss";
+@import "lib/fa/regular.scss";
+
+@import "mixins";
+@import "variables";
+@import "colors";
+@import "global";
+@import "sidebar";
+@import "body";
+@import "projects";
+@import "experience";
+@import "blog";
+@import "sms";
