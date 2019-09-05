@@ -10,18 +10,17 @@
     <script src="/assets/js/sms.js"></script>
   </head>
   <body>
-    <div class="sms-contacts">
+    <div class="sms-messages">
       <p><a href="..">Back</a></p>
-      <h1>Contacts</h1>
-      <form id="sms__form--contact" class="sms__form" autocomplete="off">
-        <input type="text" name="name" placeholder="Name"></textarea>
-        <input type="text" name="phone_number" placeholder="Phone number"></textarea>
-        <input type="submit" value="Add">
-        <p class="sms__form-result"></p>
-      </form>
-
-      <p id="sms-contacts__loading">Loading contacts...</p>
-      <ul class="sms-contacts__list"></ul>
+      <p id="sms-messages__loading">Loading messages...</p>
+      <table class="sms-messages__table">
+        <tr>
+          <th>ID</th>
+          <th>Content</th>
+          <th>Created By</th>
+          <th>Created At</th>
+        </tr>
+      </table>
     </div>
   </body>
 </html>

@@ -45,7 +45,7 @@
         <div class="section__title">
           <h3>Hobbies</h3>
         </div>
-        <p>In my free time I enjoy exercising and the great outdoors – specifically lifting weights, playing basketball and volleyball, and hiking. I also love to travel the world. My favorite trip ever is the trip to Morocco I took while studying abroad in Barcelona during the summer of 2018. There, we visited Fes, toured the Atlas Mountains, road camels into the Sahara desert where we spent the night in traditional Berber tents, played Moroccan drums with locals in Tingher Province, and navigated the bustling markets of Marrakech.</p>
+        <p>In my free time I enjoy exercising and the great outdoors – specifically lifting weights, playing basketball and volleyball, and hiking. I also love to travel the world. My favorite trip ever is the trip to Morocco I took while studying abroad in Barcelona during the summer of 2018. There, we visited Fes, toured the Atlas Mountains, rode camels into the Sahara desert where we spent the night in traditional Berber tents, played Moroccan drums with locals in Tingher Province, and navigated the bustling markets of Marrakech.</p>
       </div>
     </div>
     <div id="sidebar-footer--mobile" class="sidebar-footer--mobile"></div>

@@ -50,6 +50,11 @@ $(function() {
   if ($(".sms-contacts__list").length) {
     getContacts();
   }
+
+  // Populate messages table
+  if ($(".sms-messages__table").length) {
+    getMessages();
+  }
 });
 
 function getContacts() {
@@ -86,6 +91,48 @@ function getContacts() {
         $(".sms-contacts__list").after(
           $("<p>").text(
             "Failed to fetch contacts: " + response.responseJSON.content.message
+          )
+        );
+      }
+    }
+  });
+}
+
+function getMessages() {
+  $.ajax({
+    url: baseUrl + "/api/messages",
+    type: "get",
+    data: [],
+    beforeSend: function(xhr) {
+      xhr.setRequestHeader("x-access-token", getAccessToken());
+    },
+    success: function(response) {
+      $("#sms-messages__loading").hide();
+      const messages = response.content.data;
+
+      if (messages.length === 0) {
+        console.log(messages);
+        $(".sms-messages__table").replaceWith(
+          $("<p>").text("No contacts found")
+        );
+      }
+
+      messages.forEach(function(message) {
+        const newMessageRow = renderMessageRow(message);
+
+        $(".sms-messages__table").append(newMessageRow);
+      });
+    },
+    error: function(response) {
+      $("#sms-messages__loading").hide();
+      if (response.status === 0) {
+        $(".sms-messages__table").after(
+          $("<p>").text("Failed to connect to server")
+        );
+      } else {
+        $(".sms-messages__table").after(
+          $("<p>").text(
+            "Failed to fetch messages: " + response.responseJSON.content.message
           )
         );
       }
@@ -227,7 +274,7 @@ function deleteContact(id) {
 }
 
 function renderContactListItem(contact) {
-  const newListItem = $("<li>").data("id", contact.id);
+  const newListItem = $("<li>").data("id", contact.contact_id);
   const deleteButton = $("<button>")
     .html("Delete")
     .addClass("sms-contacts__remove-button")
@@ -237,6 +284,16 @@ function renderContactListItem(contact) {
   newListItem.append(deleteButton);
 
   return newListItem;
+}
+
+function renderMessageRow(message) {
+  const newTableRow = $("<tr>");
+  newTableRow.append($("<td>").html(message.message_id));
+  newTableRow.append($("<td>").html(message.content));
+  newTableRow.append($("<td>").html(message.username));
+  newTableRow.append($("<td>").html(message.created_at));
+
+  return newTableRow;
 }
 
 function getAccessToken() {
