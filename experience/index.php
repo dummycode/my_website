@@ -58,10 +58,10 @@
         <div class="section--experience__job">Head Teaching Assistant</div>
         <ul class="section--experience__bullets">
           <li>Overhauled entirety of course in coordination with course professor to adhere to new assessment structure and schedule</li>
-          <li>Taught recitation twice a week to 50+ students on topics from digital logic, assembly, and C fundamentals</li>
-          <li>Organized, led, and managed team of 10 TAs in charge of 250+ students enrolled in the course per semester</li>
-          <li>Designed, authored, and reviewed projects, homework, and tests to effectively evaluate student proficiency</li>
-          <li>Held office hours dedicated to one-on-one student help to strengthen knowledge in course materials and topics</li>
+          <li>Teach recitation twice a week to 50+ students on topics from digital logic, assembly, and C fundamentals</li>
+          <li>Organize, lead, and manage team of 10 TAs in charge of 250+ students enrolled in the course per semester</li>
+          <li>Design, author, and review projects, homework, and tests to effectively evaluate student proficiency</li>
+          <li>Hold office hours weekly dedicated to one-on-one student help to strengthen knowledge in course materials and topics</li>
         </ul>
       </div>
       <div class="section section--experience">
