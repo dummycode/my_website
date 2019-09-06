@@ -61,7 +61,7 @@
           <li>Teach recitation twice a week to 50+ students on topics from digital logic, assembly, and C fundamentals</li>
           <li>Organize, lead, and manage team of 10 TAs in charge of 250+ students enrolled in the course per semester</li>
           <li>Design, author, and review projects, homework, and tests to effectively evaluate student proficiency</li>
-          <li>Hold office hours weekly dedicated to one-on-one student help to strengthen knowledge in course materials and topics</li>
+          <li>Hold office hours dedicated to one-on-one student help to strengthen knowledge in course materials and topics</li>
         </ul>
       </div>
       <div class="section section--experience">
