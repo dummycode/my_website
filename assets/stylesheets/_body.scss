@@ -5,6 +5,7 @@
   margin-right: 5%;
   flex: 1;
   padding-top: 30px;
+  padding-bottom: 30px;
 
   @include md-down {
     margin: 0 5%;
@@ -26,6 +27,7 @@
 
   &:last-child {
     border-bottom: none;
+    padding-bottom: 0;
   }
 
   &__title {
