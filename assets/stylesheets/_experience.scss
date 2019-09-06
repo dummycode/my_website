@@ -35,13 +35,13 @@
 
     &__bullets {
       padding-top: 5px;
-      padding-left: 0;
       margin-bottom: 0;
+      padding-left: 20px;
+      list-style-position: outside;
+      list-style-type: square;
 
       li {
         margin-top: 5px;
-        list-style-type: square;
-        list-style-position: inside;
 
         &:first-child {
           padding-top: 0;

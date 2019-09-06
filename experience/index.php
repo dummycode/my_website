@@ -28,12 +28,11 @@
         </div>
         <div class="section--experience__job">Software Engineer Intern</div>
         <ul class="section--experience__bullets">
+          <li>Investigated and optimized multiple memory bloating requests cutting the app’s overall memory usage in half</li>
+          <li>Implemented Rails template caching to reduce average page load times by 300% after engaging with a third party to perform load testing</li>
           <li>Consulted on a client project developing a custom content management system built in Ruby on Rails</li>
-          <li>Investigated and optimized multiple memory bloating requests cutting the app’s overall memory usage by 60%</li>
-          <li>Engaged with a third party to perform load testing and in response implemented Rails template caching to reduce average 	page load times by 300%</li>
-          <li>Engineered and implemented multi-index search, providing admins and users a seamless experience managing and 	searching multiple indices</li>
-          <li>Initiated conversation and guided team in re-pointing stories to adhere to good Agile processes and provide the client 	meaningful effort estimates</li>
-
+          <li>Engineered and implemented multi-index search, providing admins and users a seamless experience managing and searching multiple indices</li>
+          <li>Initiated conversation and guided team in re-pointing stories to adhere to proper Agile processes and provided the client meaningful effort estimates</li>
         </ul>
       </div>
       <div class="section section--experience">
@@ -57,9 +56,9 @@
         </div>
         <div class="section--experience__job">Head Teaching Assistant</div>
         <ul class="section--experience__bullets">
-          <li>Overhauled entirety of course in coordination with course professor to adhere to new assessment structure and schedule</li>
+          <li>Overhauled entirety of course in coordination with professor to adhere to new assessment structure and schedule</li>
           <li>Teach recitation twice a week to 50+ students on topics from digital logic, assembly, and C fundamentals</li>
-          <li>Organize, lead, and manage team of 10 TAs in charge of 250+ students enrolled in the course per semester</li>
+          <li>Organize, lead, and manage team of ten TAs in charge of 250+ students enrolled in the course per semester</li>
           <li>Design, author, and review projects, homework, and tests to effectively evaluate student proficiency</li>
           <li>Hold office hours dedicated to one-on-one student help to strengthen knowledge in course materials and topics</li>
         </ul>
