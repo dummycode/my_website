@@ -27,7 +27,7 @@
           <h3>Me</h3>
         </div>
         <p>
-          Hi. My name is Henry Harris. I am currently a 4th year Computer Science student at the Georgia Institute of Technology, better known as Georgia Tech. I am also a candidate for a minor in Computing and Business through the Denning Technology and Management program. At school, most of my time outside of schoolwork is dedicated to being head teaching assistant for CS 2110.
+          Hi, my name is Henry Harris. I am currently a 4th year Computer Science student at the Georgia Institute of Technology, better known as Georgia Tech. I am also a candidate for a minor in Computing and Business through the Denning Technology and Management program. At school, most of my time outside of schoolwork is dedicated to being head teaching assistant for CS 2110.
         </p>
       </div>
       <div id="story" class="section">
