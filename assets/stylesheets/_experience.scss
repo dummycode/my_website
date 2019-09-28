@@ -28,6 +28,12 @@
 
     &__job {
       color: $gray;
+      margin-bottom: 0.5rem;
+    }
+
+    &__description {
+      padding-top: 5px;
+      margin-bottom: 0;
     }
 
     &__bullets {

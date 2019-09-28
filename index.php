@@ -24,7 +24,7 @@
     <div class="body">
       <div id="me" class="section">
         <div class="section__title">
-          <h3>Me</h3>
+          <h2>Me</h2>
         </div>
         <p>
           Hi, my name is Henry Harris. I am currently a 4th year Computer Science student at the Georgia Institute of Technology, better known as Georgia Tech. I am also a candidate for a minor in Computing and Business through the Denning Technology and Management program. At school, most of my time outside of schoolwork is dedicated to being head teaching assistant for CS 2110.
@@ -32,7 +32,7 @@
       </div>
       <div id="story" class="section">
         <div class="section__title">
-          <h3>Story</h3>
+          <h2>Story</h2>
         </div>
         <p>
           My story with computers began way back when I was a middle schooler, playing Minecraft with my two brothers on our private server. Wanting to write custom server plugins, I started watching <a href="https://www.youtube.com/user/thenewboston">thenewboston</a>'s Java tutorials on YouTube. The moment I saw the words "Hello World" pop up in my console, I knew programming was for me.
@@ -43,7 +43,7 @@
       </div>
       <div id="hobbies" class="section">
         <div class="section__title">
-          <h3>Hobbies</h3>
+          <h2>Hobbies</h2>
         </div>
         <p>In my free time I enjoy exercising and the great outdoors – specifically lifting weights, playing basketball and volleyball, and hiking. I also love to travel the world. My favorite trip ever is the trip to Morocco I took while studying abroad in Barcelona during the summer of 2018. There, we visited Fes, toured the Atlas Mountains, rode camels into the Sahara desert where we spent the night in traditional Berber tents, played Moroccan drums with locals in Tingher Province, and navigated the bustling markets of Marrakech.</p>
       </div>
