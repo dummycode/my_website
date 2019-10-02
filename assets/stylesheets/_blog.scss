@@ -12,14 +12,14 @@
     &--tech {
       background-color: $red;
       &::before {
-        content: 'tech';
+        content: "tech";
       }
     }
 
     &--fun {
       background-color: $green;
       &::before {
-        content: 'fun';
+        content: "fun";
       }
     }
   }
@@ -44,5 +44,36 @@
     a:hover {
       color: black;
     }
+  }
+}
+
+.blog-header {
+  &__date {
+    color: $gray;
+  }
+}
+
+.blog-content {
+  margin-top: 20px;
+
+  &__image {
+    &--inline {
+      display: block;
+      width: 50%;
+      margin: auto;
+      border-radius: 5px;
+    }
+  }
+
+  &__image-caption {
+    display: block;
+    width: 50%;
+    margin: auto;
+    font-size: 0.75rem;
+    text-align: center;
+  }
+
+  p {
+    margin-bottom: 20px;
   }
 }

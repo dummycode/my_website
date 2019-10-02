@@ -36,13 +36,13 @@
         <ul>
           <li class="blog-list__item">
             <h3>
-              <a href="/blog/2">Using PostgreSQL's JSONB Data Type in Rails</a><span class="blog-list__tag blog-list__tag--tech"></span>
+              <a href="/blog/2">Using PostgreSQL's JSONB Data Type in Rails</a> <span class="blog-list__tag blog-list__tag--tech"></span>
             </h3>
             <p class="blog-list__date">July 30th, 2019</p>
           </li>
           <li class="blog-list__item">
             <h3>
-              <a href="/blog/1">Running of The Bulls</a><span class="blog-list__tag blog-list__tag--fun"></span>
+              <a href="/blog/1">Running of The Bulls</a> <span class="blog-list__tag blog-list__tag--fun"></span>
             </h3>
             <p class="blog-list__date">December 28th, 2018</p>
           </li>
