@@ -8,6 +8,15 @@
 
     <script src="/assets/js/jquery-3.4.1.min.js"></script>
     <script src="/assets/js/handlebars.runtime-v4.1.2.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149253046-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-149253046-1');
+    </script>
     <script src="/assets/js/templatesCompiled.js"></script>
     <script>
       const sidebar = Handlebars.templates['sidebar/sidebar']({})
