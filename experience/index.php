@@ -3,7 +3,7 @@
   <head>
     <title>Henry Harris</title>
     <link rel="stylesheet" href="/assets/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese">
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/style.css">
 
     <script src="/assets/js/jquery-3.4.1.min.js"></script>
@@ -33,7 +33,7 @@
     <div class="body">
       <div class="section section--experience">
         <div class="section__title section--experience__title section--experience__title--bnr">
-          <h2>Big Nerd Ranch</h2>
+          <h3>Big Nerd Ranch</h2>
         </div>
         <div class="section--experience__job">Full-Stack Software Engineer Intern</div>
         <p class="section--experience__description">
@@ -42,7 +42,7 @@
       </div>
       <div class="section section--experience">
         <div class="section__title section--experience__title section--experience__title--sl">
-          <h2>Seller Labs</h2>
+          <h3>Seller Labs</h2>
         </div>
         <div class="section--experience__job">Full-Stack Software Engineer Intern</div>
         <p class="section--experience__description">
@@ -51,7 +51,7 @@
       </div>
       <div class="section section--experience">
         <div class="section__title section--experience__title section--experience__title--tech">
-          <h2>Georgia Institute of Technology</h2>
+          <h3>Georgia Institute of Technology</h2>
         </div>
         <div class="section--experience__job">Head Teaching Assistant</div>
         <p class="section--experience__description">
@@ -60,7 +60,7 @@
       </div>
       <div class="section section--experience">
         <div class="section__title section--experience__title section--experience__title--nedzas">
-          <h2>Nedza's Waffles</h2>
+          <h3>Nedza's Waffles</h2>
         </div>
         <div class="section--experience__job">Co-Founder</div>
         <p class="section--experience__description">

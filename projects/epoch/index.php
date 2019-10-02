@@ -10,7 +10,7 @@ $humanReadableTime = $dt->format('l, F jS, Y h:i:s A');
   <head>
     <title>Henry Harris</title>
     <link rel="stylesheet" href="/assets/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese">
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/assets/style.css">
 
     <script src="/assets/js/jquery-3.4.1.min.js"></script>
@@ -94,7 +94,7 @@ $humanReadableTime = $dt->format('l, F jS, Y h:i:s A');
     <div class="body">
       <div class="section">
         <div class="section__title">
-          <h2>Epoch Converter</h2>
+          <h3>Epoch Converter</h2>
         </div>
         <p><span id="epoch-time"><?php echo $epoch ?></span> is <strong><span id="epoch-human"><?php echo $humanReadableTime ?></span></strong></p>
         <form id="epoch-form">
@@ -104,7 +104,7 @@ $humanReadableTime = $dt->format('l, F jS, Y h:i:s A');
       </div>
       <div class="section">
         <div class="section__title">
-          <h2>Current Time</h2>
+          <h3>Current Time</h2>
         </div>
         <p>The current time is <a href="" id="now-link">now</a></p>
       </div>
