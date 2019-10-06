@@ -26,6 +26,8 @@
       const dino = Handlebars.templates['projects/dino']({})
       const westbrook = Handlebars.templates['projects/westbrook']({})
       const sms = Handlebars.templates['projects/sms']({})
+      const cubefield = Handlebars.templates['projects/cubefield']({})
+      const warranty = Handlebars.templates['projects/warranty']({})
       const projectsList = Handlebars.templates['projects/all']({})
 
       $(document).ready(function () {
@@ -36,6 +38,8 @@
         $("#projects__dino").html(dino)
         $("#projects__westbrook").html(westbrook)
         $("#projects__sms").html(sms)
+        $("#projects__warranty").html(warranty)
+        $("#projects__cubefield").html(cubefield)
         $("#projects-list").html(projectsList)
       })
     </script>
@@ -50,7 +54,9 @@
           <div id="projects__quick-queue" class="col-sm-12 col-md-6 col-lg-6 project-card"></div>
           <div id="projects__my-website" class="col-sm-12 col-md-6 col-lg-6 project-card"></div>
           <div id="projects__westbrook" class="col-sm-12 col-md-6 col-lg-6 project-card"></div>
+          <div id="projects__cubefield" class="col-sm-12 col-md-6 col-lg-6 project-card"></div>
           <div id="projects__dino" class="col-sm-12 col-md-6 col-lg-6 project-card"></div>
+          <div id="projects__warranty" class="col-sm-12 col-md-6 col-lg-6 project-card"></div>
         </div>
       </div>
       <div id="projects-list" class="hidden projects-list"></div>
