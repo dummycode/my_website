@@ -9,5 +9,6 @@ curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($curl);
 curl_close($curl);
 
-header("Location: /projects/westbrook");
+echo "Done";
+//header("Location: /projects/westbrook");
 ?>
