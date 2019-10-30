@@ -9,6 +9,9 @@ curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 $response = curl_exec($curl);
 curl_close($curl);
 
-echo "Done";
+$data = ["code" => 200, "message" => "Updated"];
+
+header('Content-Type: application/json');
+echo json_encode($data);
 //header("Location: /projects/westbrook");
 ?>
