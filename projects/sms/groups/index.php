@@ -10,14 +10,17 @@
     <script src="/assets/js/sms.js"></script>
   </head>
   <body>
-    <div class="sms">
-      <p><a href="contacts">Manage Contacts</a><a href="groups">Manage Groups</a><a href="messages">View Messages</a><a href="logout">Logout</a></p>
-      <form id="sms__form" class="sms__form" autocomplete="off">
-        <textarea name="message" placeholder="Enter message..." class="sms__message-field"></textarea>
-        <span id="sms__message-field-count" class="sms__message-field-count">0/160</span>
-        <input type="submit" value="Send">
+    <div class="sms-groups">
+      <p><a href="..">Back</a></p>
+      <h1>Groups</h1>
+      <form id="sms__form--group" class="sms__form" autocomplete="off">
+        <input type="text" name="name" placeholder="Name"></textarea>
+        <input type="submit" value="Add">
         <p class="sms__form-result"></p>
       </form>
+
+      <p id="sms-groups__loading">Loading groups...</p>
+      <ul class="sms-groups__list"></ul>
     </div>
   </body>
 </html>

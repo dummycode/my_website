@@ -51,6 +51,22 @@
   }
 }
 
+.sms-groups {
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+  padding: 10px;
+  &__list {
+    li {
+      margin-top: 10px;
+    }
+  }
+
+  &__remove-button {
+    margin-left: 10px;
+  }
+}
+
 .sms-messages {
   width: 600px;
   padding: 10px;

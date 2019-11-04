@@ -31,6 +31,14 @@ $(function() {
     return false;
   });
 
+  $("#sms__form--group").submit(function() {
+    $("#sms__form--group")
+      .find("input[type=submit]")
+      .prop("disabled", true);
+    createGroup();
+    return false;
+  });
+
   $(".sms__message-field").prop("maxlength", "160");
   $(".sms__message-field").bind("input propertychange", function() {
     $("#sms__message-field-count").text(
@@ -319,4 +327,48 @@ function getUrlParameter(sParam) {
 
 function logout() {
   window.sessionStorage.removeItem("token");
+}
+
+function createGroup() {
+  console.log("Create group");
+  $.ajax({
+    url: baseUrl + "/api/groups",
+    type: "post",
+    data: $("#sms__form--group").serialize(),
+    beforeSend: function(xhr) {
+      xhr.setRequestHeader("x-access-token", getAccessToken());
+    },
+    success: function(response) {
+      const group = response.content.data;
+
+      // TODO FIX
+      //   const newContactListItem = renderContactListItem(contact);
+      //   $(".sms-contacts__list").prepend(newContactListItem);
+      //
+      //   $("#sms__form--contact")
+      //     .find("input[type=text], textarea")
+      //     .val("");
+      //   $("#sms__form--contact")
+      //     .find("input[type=submit]")
+      //     .prop("disabled", false);
+      //
+      //   $(".sms-contacts__list").prepend();
+    },
+    error: function(response) {
+      if (response.status === 0) {
+        $(".sms__form-result")
+          .text("Failed to connect to server")
+          .show();
+      } else {
+        $(".sms__form-result")
+          .text(
+            "Failed to create group: " + response.responseJSON.content.message
+          )
+          .show();
+      }
+      $("#sms__form--contact")
+        .find("input[type=submit]")
+        .prop("disabled", false);
+    }
+  });
 }
