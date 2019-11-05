@@ -76,6 +76,14 @@
     &--sms:before {
       content: fa-content($fa-var-sms);
     }
+
+    &--cubefield:before {
+      content: fa-content($fa-var-cube);
+    }
+
+    &--warranty:before {
+      content: fa-content($fa-var-clock);
+    }
   }
 
   &__title {
