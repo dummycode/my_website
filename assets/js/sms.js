@@ -78,8 +78,9 @@ function getContacts() {
       const contacts = response.content.data;
 
       if (contacts.length === 0) {
-        $(".sms-contacts__list").replaceWith(
-          $("<p>").text("No contacts found")
+        $(".sms-contacts__list").hide();
+        $(".sms-contacts__list").before(
+          $("<p class=\"sms-contacts__list--none\">").text("No contacts found")
         );
       }
 
@@ -194,6 +195,8 @@ function createContact() {
       const contact = response.content.data;
 
       const newContactListItem = renderContactListItem(contact);
+      $(".sms-contacts__list--none").hide();
+      $(".sms-contacts__list").show();
       $(".sms-contacts__list").prepend(newContactListItem);
 
       $("#sms__form--contact")
