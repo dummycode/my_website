@@ -1,7 +1,12 @@
 <?php
-$epoch = isset($_GET['epoch']) ? $_GET['epoch'] : time();
-$dt = new DateTime("@$epoch");
-$humanReadableTime = $dt->format('l, F jS, Y h:i:s A');
+  $epoch = isset($_GET['epoch']) ? $_GET['epoch'] : time();
+  try {
+    new DateTime("@" . $epoch);
+  } catch (Exception $e) {
+    $epoch = time();
+  }
+  $dt = new DateTime("@" . $epoch);
+  $humanReadableTime = $dt->format('l, F jS, Y h:i:s A');
 ?>
 
 
@@ -43,45 +48,7 @@ $humanReadableTime = $dt->format('l, F jS, Y h:i:s A');
         $("#now-link").text(newEpoch);
       }
 
-      function updateTime() {
-        const data = $("#epoch-form").serializeArray()
-        var dataObject = {}
-        data.forEach(function (item) {
-          dataObject[item.name] = item.value
-        })
-
-        epoch = dataObject.epoch
-
-        try {
-          epochDateString = (new Date(epoch)).toISOString()
-        } catch (err) {
-          console.log(err)
-          $("#epoch-form")
-            .find("input[type=submit]")
-            .prop("disabled", false);
-          return
-        }
-
-        $("#epoch-time").text(epoch)
-        $("#epoch-human").text(epochDateString)
-
-        $("#epoch-form")
-          .find("input[type=text], textarea")
-          .val("");
-        $("#epoch-form")
-          .find("input[type=submit]")
-          .prop("disabled", false);
-      }
-
       $(document).ready(function () {
-        $("#epoch-form").submit(function() {
-          $("#epoch-form")
-            .find("input[type=submit]")
-            .prop("disabled", true);
-          updateTime();
-          return false;
-        });
-
         currentTime()
         window.setInterval(function() {
           currentTime()
@@ -89,6 +56,7 @@ $humanReadableTime = $dt->format('l, F jS, Y h:i:s A');
       })
     </script>
   </head>
+
   <body>
     <div id="sidebar" class="sidebar"></div>
     <div class="body">
@@ -106,7 +74,7 @@ $humanReadableTime = $dt->format('l, F jS, Y h:i:s A');
         <div class="section__title">
           <h3>Current Time</h2>
         </div>
-        <p>The current time is <a href="" id="now-link">now</a></p>
+        <p>The current time is <a href="" id="now-link">now</a>.</p>
       </div>
     <div id="sidebar-footer--mobile" class="sidebar-footer--mobile"></div>
   </body>
