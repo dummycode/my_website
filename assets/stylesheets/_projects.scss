@@ -47,7 +47,7 @@
     }
 
     &:before {
-      font-family: "Font Awesome 5 Solid";
+      font-family: 'Font Awesome 5 Solid';
       position: absolute;
       color: $lighter_gray;
       left: calc(50% - 75px);
@@ -88,10 +88,10 @@
 
   &__title {
     a {
-      color: $darkest_gray;
+      color: $font_color;
 
       &:hover {
-        color: $darkest_gray;
+        color: $font_color;
       }
     }
   }
@@ -123,21 +123,21 @@
   &--js {
     &::before {
       color: $color_js;
-      content: "\25CF  ";
+      content: '\25CF  ';
     }
   }
 
   &--html {
     &::before {
       color: $color_html;
-      content: "\25CF  ";
+      content: '\25CF  ';
     }
   }
 
   &--css {
     &::before {
       color: $color_css;
-      content: "\25CF  ";
+      content: '\25CF  ';
     }
   }
 
@@ -150,14 +150,14 @@
   &--python {
     &::before {
       color: $color_python;
-      content: "\25CF  ";
+      content: '\25CF  ';
     }
   }
 
   &--c {
     &::before {
       color: $color_c;
-      content: "\25CF  ";
+      content: '\25CF  ';
     }
   }
 }

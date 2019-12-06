@@ -30,12 +30,12 @@
     }
 
     a {
-      color: $darkest_gray;
+      color: $font_color;
       text-decoration: none;
     }
 
     a:hover {
-      color: $darkest_gray;
+      color: $font_color;
     }
   }
 
@@ -122,7 +122,7 @@
 
   &__icon {
     text-decoration: none;
-    color: black;
+    color: $font_color;
     margin: 0 7.5px;
 
     @include md-down {

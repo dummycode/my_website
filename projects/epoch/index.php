@@ -62,7 +62,7 @@
     <div class="body">
       <div class="section">
         <div class="section__title">
-          <h3>Epoch Converter</h2>
+          <h3>Epoch Converter</h3>
         </div>
         <p><span id="epoch-time"><?php echo $epoch ?></span> is <strong><span id="epoch-human"><?php echo $humanReadableTime ?></span></strong></p>
         <form id="epoch-form">

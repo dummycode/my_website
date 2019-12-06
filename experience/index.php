@@ -33,7 +33,7 @@
     <div class="body">
       <div class="section section--experience">
         <div class="section__title section--experience__title section--experience__title--sfdc">
-          <h3>Salesforce</h2>
+          <h3>Salesforce</h3>
         </div>
         <div class="section--experience__job">Software Engineer Intern</div>
         <p class="section--experience__description">
@@ -42,7 +42,7 @@
       </div>
       <div class="section section--experience">
         <div class="section__title section--experience__title section--experience__title--bnr">
-          <h3>Big Nerd Ranch</h2>
+          <h3>Big Nerd Ranch</h3>
         </div>
         <div class="section--experience__job">Software Engineer Intern</div>
         <p class="section--experience__description">
@@ -51,7 +51,7 @@
       </div>
       <div class="section section--experience">
         <div class="section__title section--experience__title section--experience__title--sl">
-          <h3>Seller Labs</h2>
+          <h3>Seller Labs</h3>
         </div>
         <div class="section--experience__job">Software Engineer Intern</div>
         <p class="section--experience__description">
@@ -60,7 +60,7 @@
       </div>
       <div class="section section--experience">
         <div class="section__title section--experience__title section--experience__title--tech">
-          <h3>Georgia Institute of Technology</h2>
+          <h3>Georgia Institute of Technology</h3>
         </div>
         <div class="section--experience__job">Head Teaching Assistant</div>
         <p class="section--experience__description">
@@ -69,7 +69,7 @@
       </div>
       <div class="section section--experience">
         <div class="section__title section--experience__title section--experience__title--nedzas">
-          <h3>Nedza's Waffles</h2>
+          <h3>Nedza's Waffles</h3>
         </div>
         <div class="section--experience__job">Co-Founder</div>
         <p class="section--experience__description">
