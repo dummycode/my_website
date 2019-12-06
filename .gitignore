@@ -3,3 +3,4 @@ assets/style.css.map
 assets/js/templatesCompiled.js
 .sass-cache
 .DS_STORE
+*.swp
