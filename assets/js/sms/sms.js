@@ -1,3 +1,5 @@
+import { getUrlParameter } from '../utils/url'
+
 const baseUrl = 'http://localhost:3000';
 
 if (
@@ -405,27 +407,6 @@ function getAccessToken() {
   return window.sessionStorage.token; // TODO this is not secure
 }
 
-function getUrlParameter(sParam) {
-  var sPageURL = window.location.search.substring(1),
-    sURLVariables = sPageURL.split('&'),
-    sParameterName,
-    i;
-
-  for (i = 0; i < sURLVariables.length; i++) {
-    sParameterName = sURLVariables[i].split('=');
-
-    if (sParameterName[0] === sParam) {
-      return sParameterName[1] === undefined
-        ? true
-        : decodeURIComponent(sParameterName[1]);
-    }
-  }
-}
-
-function logout() {
-  window.sessionStorage.removeItem('token');
-}
-
 function createGroup() {
   console.log('Create group');
   $.ajax({
@@ -469,3 +450,8 @@ function createGroup() {
     },
   });
 }
+
+export function logout() {
+  window.sessionStorage.removeItem('token');
+}
+window.logout = logout;

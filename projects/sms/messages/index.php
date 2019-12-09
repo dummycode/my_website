@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/assets/style.css">
 
     <script src="/assets/js/jquery-3.4.1.min.js"></script>
-    <script src="/assets/js/sms.js"></script>
+    <script src="/assets/bundle.js"></script>
   </head>
   <body>
     <div class="sms-messages">

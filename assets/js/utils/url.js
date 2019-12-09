@@ -1,4 +1,4 @@
-var getUrlParameter = function getUrlParameter(sParam) {
+export const getUrlParameter = function(sParam) {
   var sPageURL = window.location.search.substring(1),
     sURLVariables = sPageURL.split("&"),
     sParameterName,

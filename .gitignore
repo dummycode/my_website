@@ -1,6 +1,7 @@
 assets/style.css
 assets/style.css.map
 assets/js/templatesCompiled.js
+assets/bundle.js
 .sass-cache
 .DS_STORE
 *.swp
