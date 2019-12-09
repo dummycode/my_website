@@ -10,6 +10,8 @@ exec('sass assets/stylesheets/application.scss:assets/style.css')
 print('Precompiling HTML templates...')
 exec('handlebars assets/templates/ -f assets/js/templatesCompiled.js -e hbs')
 
+print('Running webpack...')
+exec('webpack --config assets/webpack.config.js')
 
 FILES = [
     'index.php',
@@ -17,6 +19,7 @@ FILES = [
     'assets/bootstrap.min.css',
     'assets/js',
     'assets/style.css',
+    'assets/bundle.js',
     'blog',
     'experience',
     'projects',
