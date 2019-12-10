@@ -30,8 +30,15 @@
     text-align: right;
   }
 
-  a {
-    margin-right: 10px;
+  &__header {
+    a {
+      margin: 0;
+    }
+
+    a:not(:last-child) {
+      padding-right: 10px;
+      border-right: solid 1px #000;
+    }
   }
 }
 
