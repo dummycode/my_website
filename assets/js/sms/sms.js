@@ -382,7 +382,6 @@ function renderContactListItem(contact) {
 
 function renderMessageRow(message) {
   const newTableRow = $('<tr>');
-  newTableRow.append($('<td>').html(message.message_id));
   newTableRow.append($('<td>').html(message.content));
   newTableRow.append($('<td>').html(message.username));
   newTableRow.append($('<td>').html(message.created_at));

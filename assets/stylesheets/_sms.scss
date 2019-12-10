@@ -31,13 +31,14 @@
   }
 
   &__header {
-    a {
-      margin: 0;
+    a:not(:first-child) {
+      padding-left: 10px;
+      margin-left: -12px;
     }
 
     a:not(:last-child) {
       padding-right: 10px;
-      border-right: solid 1px #000;
+      border-right: solid 1px $darkest_gray;
     }
   }
 }

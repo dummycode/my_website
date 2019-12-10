@@ -15,7 +15,6 @@
       <p id="sms-messages__loading">Loading messages...</p>
       <table class="sms-messages__table">
         <tr>
-          <th>ID</th>
           <th>Content</th>
           <th>Created By</th>
           <th>Created At</th>
