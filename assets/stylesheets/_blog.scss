@@ -12,14 +12,14 @@
     &--tech {
       background-color: $red;
       &::before {
-        content: "tech";
+        content: 'tech';
       }
     }
 
     &--fun {
       background-color: $green;
       &::before {
-        content: "fun";
+        content: 'fun';
       }
     }
   }
