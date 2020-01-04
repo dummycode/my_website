@@ -7,3 +7,5 @@ Copyright 2016-2019, Henry Harris <mail@henryharr.is>
 
 `handlebars assets/templates/ -f assets/js/templatesCompiled.js -e hbs`
 
+`webpack --config assets/webpack.config.js`
+
