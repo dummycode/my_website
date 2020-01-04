@@ -75,5 +75,24 @@
 
   p {
     margin-bottom: 20px;
+    .code {
+      background-color: $lightest_gray;
+      color: $light-red;
+    }
+  }
+
+  .gist-meta {
+    display: none;
+  }
+
+  .gist {
+    .blob-code {
+      font-size: 1rem;
+      line-height: 1.25rem;
+      @include md-down {
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+      }
+    }
   }
 }
