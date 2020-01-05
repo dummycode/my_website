@@ -19,7 +19,7 @@
       </p>
       <form id="sms__form" class="sms__form" autocomplete="off">
         <textarea name="message" placeholder="Enter message..." class="sms__message-field"></textarea>
-        <select type="select" name="group" class="sms-group-select">
+        <select type="select" name="groupId" class="sms-group-select">
           <option>Loading...</option>
         </select>
         <span id="sms__message-field-count" class="sms__message-field-count">0/160</span>

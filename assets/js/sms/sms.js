@@ -133,7 +133,6 @@ function populateGroupsSelector() {
           .text(group.name),
       )
     })
-    console.log('Got groups!', groups)
   }
 
   const errorHandler = function(response) {
