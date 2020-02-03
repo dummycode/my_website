@@ -37,7 +37,12 @@
           <h3>Me</h3>
         </div>
         <p>
-          Hi, my name is Henry Harris. I am currently a 4th year Computer Science student at the Georgia Institute of Technology, better known as Georgia Tech. I am also a candidate for a minor in Computing and Business through the Denning Technology and Management program. At school, most of my time outside of schoolwork is dedicated to being head teaching assistant for CS 2110.
+          Hi, my name is Henry Harris. I am currently a 4th year Computer Science student at the Georgia Institute of Technology, better known as Georgia Tech.
+          I am also a candidate for a minor in Computing and Business through the Denning Technology and Management program.
+          At school, most of my time outside of schoolwork is dedicated to a teaching assistant for CS 2110 (Computer Organization and Programming).
+          <!-- 
+              This is my website. I created this website to showcase my work and plus, all famous people have their own websites.
+              But, correlation does not equal causation. Or was it causation does not equal correlation. Oh how I wish my 10th grade statistics teacher could see me now. Anyways, who is Henry Harris? -->
         </p>
       </div>
       <div id="story" class="section">
