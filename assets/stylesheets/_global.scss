@@ -24,15 +24,15 @@ body {
   }
 
   a {
-    color: $blue;
+    color: $light_red;
     text-decoration: none;
 
     &:active {
-      color: $blue;
+      color: $light_red;
     }
 
     &:hover {
-      color: $blue;
+      color: $light_red;
       text-decoration: none;
     }
   }

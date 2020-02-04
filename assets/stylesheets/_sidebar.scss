@@ -11,7 +11,8 @@
 
   align-items: center;
 
-  background-color: $lightest_gray;
+  background-color: $lightester_blue;
+  background-image: url("/assets/img/bg-pattern.png");
 
   @include md-down {
     height: 376px;
@@ -30,12 +31,12 @@
     }
 
     a {
-      color: $font_color;
+      color: $darkest_blue;
       text-decoration: none;
     }
 
     a:hover {
-      color: $font_color;
+      color: $darkest_blue;
     }
   }
 
@@ -122,7 +123,7 @@
 
   &__icon {
     text-decoration: none;
-    color: $font_color;
+    color: $darkest_blue;
     margin: 0 7.5px;
 
     @include md-down {
