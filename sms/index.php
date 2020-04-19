@@ -1,1 +1,5 @@
-<?php header("Location: /projects/sms"); ?>
+<!DOCTYPE php>
+
+<?php
+  header("Location: /projects/sms");
+?>
