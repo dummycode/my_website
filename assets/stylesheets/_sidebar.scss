@@ -12,7 +12,8 @@
   align-items: center;
 
   background-color: $lightester_blue;
-  background-image: url("/assets/img/bg-pattern.png");
+  background-image: url("/assets/img/hexagontile.svg");
+  background-size: 50px;
 
   @include md-down {
     height: 376px;
