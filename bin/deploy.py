@@ -16,6 +16,7 @@ exec('webpack --config assets/webpack.config.js')
 FILES = [
     'index.php',
     'assets/lib',
+    'assets/img',
     'assets/bootstrap.min.css',
     'assets/js',
     'assets/style.css',
