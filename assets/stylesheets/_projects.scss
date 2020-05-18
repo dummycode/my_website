@@ -62,7 +62,7 @@
     }
 
     &--my-website:before {
-      content: fa-content($fa-var-laptop);
+      content: fa-content($fa-var-laptop-code);
     }
 
     &--dino:before {
@@ -83,6 +83,14 @@
 
     &--warranty:before {
       content: fa-content($fa-var-clock);
+    }
+
+    &--rustos:before {
+      content: fa-content($fa-var-laptop);
+    }
+
+    &--w2g:before {
+      content: fa-content($fa-var-glasses);
     }
   }
 
@@ -145,6 +153,10 @@
   }
 
   &--java {
+    &::before {
+      color: $color_java;
+      content: '\25CF  ';
+    }
   }
 
   &--python {
@@ -157,6 +169,13 @@
   &--c {
     &::before {
       color: $color_c;
+      content: '\25CF  ';
+    }
+  }
+
+  &--rust {
+    &::before {
+      color: $color_rust;
       content: '\25CF  ';
     }
   }

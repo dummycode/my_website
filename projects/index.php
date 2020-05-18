@@ -28,6 +28,8 @@
       const sms = Handlebars.templates['projects/sms']({})
       const cubefield = Handlebars.templates['projects/cubefield']({})
       const warranty = Handlebars.templates['projects/warranty']({})
+      const rustos = Handlebars.templates['projects/rustos']({})
+      const w2g = Handlebars.templates['projects/w2g']({})
       const projectsList = Handlebars.templates['projects/all']({})
 
       $(document).ready(function () {
@@ -40,6 +42,8 @@
         $("#projects__sms").html(sms)
         $("#projects__warranty").html(warranty)
         $("#projects__cubefield").html(cubefield)
+        $("#projects__rustos").html(rustos);
+        $("#projects__w2g").html(w2g);
         $("#projects-list").html(projectsList)
       })
     </script>
@@ -51,7 +55,9 @@
       <div class="projects-favorites">
         <div class="row">
           <div id="projects__sms" class="col-sm-12 col-md-6 col-lg-6 project-card"></div>
+          <div id="projects__rustos" class="col-sm-12 col-md-6 col-lg-6 project-card"></div>
           <div id="projects__quick-queue" class="col-sm-12 col-md-6 col-lg-6 project-card"></div>
+          <div id="projects__w2g" class="col-sm-12 col-md-6 col-lg-6 project-card"></div>
           <div id="projects__my-website" class="col-sm-12 col-md-6 col-lg-6 project-card"></div>
           <div id="projects__westbrook" class="col-sm-12 col-md-6 col-lg-6 project-card"></div>
           <div id="projects__cubefield" class="col-sm-12 col-md-6 col-lg-6 project-card"></div>
