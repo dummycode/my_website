@@ -48,12 +48,33 @@
         $("#now-link").text(newEpoch);
       }
 
+      function isValidDate(date) {
+        return date instanceof Date && !isNaN(date)
+      }
+
       $(document).ready(function () {
         currentTime()
         window.setInterval(function() {
           currentTime()
         }, 1000)
+
+          $("#epoch-form").submit(function(event) {
+            event.preventDefault()
+
+            const epoch = $("#epoch-form").find('input[name="epoch"]').val()
+console.log({epoch})
+            const date = new Date(epoch)
+console.log({date})
+
+            if (isValidDate(date)) {
+                return true
+            } else {
+              $("#epoch__error").removeAttr("hidden")
+              return false
+            }
+          })
       })
+
     </script>
   </head>
 
@@ -66,7 +87,8 @@
         </div>
         <p><span id="epoch-time"><?php echo $epoch ?></span> is <strong><span id="epoch-human"><?php echo $humanReadableTime ?></span></strong></p>
         <form id="epoch-form">
-          <input name="epoch" type="text" placeholder="Timestamp">
+          <p>Timestamp:</p> <input name="epoch" type="text" placeholder="Timestamp">
+          <p id="epoch__error" hidden="true">Timestamp must be a valid epoch timestamp</p>
           <input type="submit" value="Convert">
         </form>
       </div>

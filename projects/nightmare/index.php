@@ -40,6 +40,17 @@
                     This form is an example of my worst nightmare. An absolute attrocity in terms of both usability and accessibility.
                 </p>
             </div>
+            <div class="section">
+                <div class="section__title">
+                    <h3>Form</h3>
+                </div>
+                <form>
+                    <button role="submit">Submit</button>
+                    <input placeholder="Full name"></input>
+                    <input placeholder="Birthdate"></input>
+                </form>
+                </div>
+            </div>
         </div>
     </body>
 </html>
