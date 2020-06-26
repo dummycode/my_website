@@ -34,6 +34,10 @@
   &__title {
     h1 {
       font-size: 2rem;
+
+      @include md-down {
+        font-size: 3rem;
+      }
     }
     font-weight: 600;
     margin-bottom: 20px;

@@ -33,7 +33,6 @@
     padding: 24px;
     margin: 12px;
     min-height: 300px;
-    height: 300px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -95,6 +94,9 @@
   }
 
   &__title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+
     a {
       color: $font_color;
 
