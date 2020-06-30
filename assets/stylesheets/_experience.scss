@@ -1,7 +1,7 @@
 .section {
   &--experience {
     @include md-down {
-        min-height: 20vh;
+      min-height: 15vh;
     }
 
     &__title {
