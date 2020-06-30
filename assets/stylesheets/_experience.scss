@@ -1,5 +1,9 @@
 .section {
   &--experience {
+    @include md-down {
+        min-height: 20vh;
+    }
+
     &__title {
       margin-bottom: 10px;
       font-size: 24px;
