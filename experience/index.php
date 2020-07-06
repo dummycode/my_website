@@ -37,7 +37,7 @@
         </div>
         <div class="section--experience__job">Software Engineer Intern</div>
         <p class="section--experience__description">
-          Coming soon...
+          Member of the Identity team at Heroku: responsible for all things authentication and authorization for Heroku's Platform API
         </p>
       </div>
       <div class="section section--experience">
