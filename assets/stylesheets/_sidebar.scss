@@ -15,6 +15,7 @@
   background-image: url("/assets/img/hexagontile.svg");
   background-size: 50px;
   background-repeat: round;
+  background-position-x: 1px;
 
   @include md-down {
     height: 400px;
