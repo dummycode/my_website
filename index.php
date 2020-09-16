@@ -40,7 +40,7 @@
           Hi, my name is Henry Harris. I am currently a 4th year Computer Science student at the Georgia Institute of Technology, better known as Georgia Tech.
           I am also a candidate for a minor in Computing and Business through the Denning Technology and Management program.
           At school, most of my time outside of schoolwork is dedicated to being a teaching assistant for CS 2110 (Computer Organization and Programming).
-          <!-- 
+          <!--
               This is my website. I created this website to showcase my work and plus, all famous people have their own websites.
               But, correlation does not equal causation. Or was it causation does not equal correlation. Oh how I wish my 10th grade statistics teacher could see me now. Anyways, who is Henry Harris? -->
         </p>
@@ -50,10 +50,12 @@
           <h1>Story</h1>
         </div>
         <p>
-          My story with computers began way back when I was a middle schooler, playing Minecraft with my two brothers on our private server. Wanting to write custom server plugins, I started watching <a href="https://www.youtube.com/user/thenewboston">thenewboston</a>'s Java tutorials on YouTube. The moment I saw the words "Hello World" pop up in my console, I knew programming was for me.
+          My story with computers began way back when I was a middle schooler, playing Minecraft with my two brothers on our private server.
+          Wanting to write custom server plugins, I started watching <a href="https://www.youtube.com/user/thenewboston">thenewboston</a>'s Java tutorials on YouTube.
+          The moment I saw the words "Hello World" pop up in my console, I knew programming was for me.
         </p>
         <p>
-          Since, I have taken AP Computer Science, chosen Computer Science as my major, gotten heavily involved in the College of Computing at Georgia Tech, worked two software engineering internships, built countless personal projects, and I continue to love it just as much to this day.
+          Since, I have taken AP Computer Science, chosen Computer Science as my major, gotten heavily involved in the College of Computing at Georgia Tech, worked three software engineering internships, built countless personal projects, and I continue to love it just as much to this day.
         </p>
       </div>
       <div id="hobbies" class="section">
