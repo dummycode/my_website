@@ -32,6 +32,16 @@
     <div id="sidebar" class="sidebar"></div>
     <div class="body">
       <div class="section section--experience">
+        <div class="section__title section--experience__title section--experience__title--palantir">
+          <h1>Palantir</h1>
+        </div>
+        <div class="section--experience__job">Software Engineer</div>
+        <p class="section--experience__description">
+          Incoming software engineer
+        </p>
+      </div>
+
+      <div class="section section--experience">
         <div class="section__title section--experience__title section--experience__title--sfdc">
           <h1>Salesforce</h1>
         </div>
