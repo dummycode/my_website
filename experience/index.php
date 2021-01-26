@@ -37,7 +37,7 @@
         </div>
         <div class="section--experience__job">Software Engineer</div>
         <p class="section--experience__description">
-          Incoming software engineer
+          Working on Gotham's suite of artificial intelligence (AI) tools
         </p>
       </div>
 
