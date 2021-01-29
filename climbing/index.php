@@ -32,28 +32,18 @@
     <script type="text/javascript"charset="utf-8">
         d3.text("summits.csv", function(data) {
             const parsedCSV = d3.csv.parseRows(data);
-            console.log(parsedCSV);
             const summits = parsedCSV;
 
             const table = d3.select("#summits")[0][0];
-            console.log(table);
-            var rowCnt = table.rows.length;
-            console.log(rowCnt);
-            var tr = table.insertRow(rowCnt);
-            tr = table.insertRow(rowCnt);
 
-            var td = document.createElement('td');          // TABLE DEFINITION.
-            td = tr.insertCell(0);
-            td.innerHTML = "Test";
-
-            for (summit in summits) {
-                console.log({summit});
-            }
-            /*table.selectAll('td').data(parsedCSV).text(function(d) {
-                const data = Object.values(d)[0];
-                console.log(data);
-                return data;
-            });*/
+            summits.forEach(function (summit) {
+                const tr = table.insertRow(-1);
+                summit.forEach(function (data) {
+                    var td = document.createElement('td');
+                    td = tr.insertCell(-1);
+                    td.innerHTML = data;
+                });
+            });
         });
     </script>
   </head>
@@ -82,12 +72,6 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Chimborazo</td>
-                    <td>Ecuador</td>
-                    <td>6,263</td>
-                    <td>01/06/2021</td>
-                </tr>
             </tbody>
         </table>
       </div>
