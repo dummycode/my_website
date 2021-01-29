@@ -16,7 +16,7 @@
 
       gtag('config', 'UA-149253046-1');
     </script>
-    <script src="/assets/js/handlebars.runtime-v4.7.6.js"></script>
+    <script src="/assets/js/handlebars.runtime-v4.1.2.js"></script>
     <script src="/assets/js/templatesCompiled.js"></script>
     <script>
       const sidebar = Handlebars.templates['sidebar/sidebar']({})
@@ -27,24 +27,7 @@
         $("#sidebar-footer--mobile").html(sidebarFooterMobile)
       })
     </script>
-    <script src="https://d3js.org/d3.v3.min.js"></script>
-
-    <script type="text/javascript"charset="utf-8">
-        d3.text("summits.csv", function(data) {
-            const parsedCSV = d3.csv.parseRows(data);
-            const summits = parsedCSV;
-
-            const table = d3.select("#summits")[0][0];
-
-            summits.forEach(function (summit) {
-                const tr = table.insertRow(-1);
-                summit.forEach(function (data) {
-                    var td = document.createElement('td');
-                    td = tr.insertCell(-1);
-                    td.innerHTML = data;
-                });
-            });
-        });
+    <script>
     </script>
   </head>
 
@@ -53,27 +36,40 @@
     <div class="body">
       <div class="section">
         <div class="section__title">
-          <h1>Climbing</h1>
+          <h1>Stenography</h1>
         </div>
-        <p>I have had the opportunity to climb some of the world's most popular, difficult, and fun mountains. Here is a list of some of the hills I have been fortunate enough to summit.</p>
+        <p>Stenography is the practice of concealing a file, message, image, or video within another file, message, image, or video.</p>
+        <p>In order to encode an image inside of another image, we can use a basic strategy.</p>
       </div>
 
       <div class="section">
         <div class="section__title">
-          <h1>Summits</h1>
+          <h1>Example</h1>
         </div>
-        <table id="summits" class="summits">
-            <thead>
-                <tr>
-                    <th>Summit</th>
-                    <th>Country</th>
-                    <th>Elevation (m)</th>
-                    <th>Report</th>
-                </tr>
-            </thead>
-            <tbody>
-            </tbody>
-        </table>
+        <p>Example</p>
+      </div>
+
+      <div class="section">
+        <div class="section__title">
+          <h1>Demo</h1>
+        </div>
+        <p>Encode</p>
+        <form id="encode-form" method="POST" action="http://enigmatic-brook-56715.herokuapp.com/encode" enctype="multipart/form-data">
+          Background Image: <input type="file" name="base_image"><br>
+          Secret Image: <input type="file" name="secret_image"><br>
+          <br>
+          <input type="submit" value="Encode">
+        </form>
+
+        <br>
+
+        <p>Decode</p>
+        <form id="decode-form" method="POST" action="http://enigmatic-brook-56715.herokuapp.com/decode" enctype="multipart/form-data">
+          Image: <input type="file" name="image"><br>
+          <br>
+          <input type="submit" value="Decode">
+        </form>
+
       </div>
     <div id="sidebar-footer--mobile" class="sidebar-footer--mobile"></div>
   </body>
