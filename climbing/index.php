@@ -16,7 +16,7 @@
 
       gtag('config', 'UA-149253046-1');
     </script>
-    <script src="/assets/js/handlebars.runtime-v4.1.2.js"></script>
+    <script src="/assets/js/handlebars.runtime-v4.7.6.js"></script>
     <script src="/assets/js/templatesCompiled.js"></script>
     <script>
       const sidebar = Handlebars.templates['sidebar/sidebar']({})
@@ -31,8 +31,9 @@
 
     <script type="text/javascript"charset="utf-8">
         d3.text("summits.csv", function(data) {
-            var parsedCSV = d3.csv.parseRows(data);
+            const parsedCSV = d3.csv.parseRows(data);
             console.log(parsedCSV);
+            const summits = parsedCSV;
 
             const table = d3.select("#summits")[0][0];
             console.log(table);
@@ -45,6 +46,9 @@
             td = tr.insertCell(0);
             td.innerHTML = "Test";
 
+            for (summit in summits) {
+                console.log({summit});
+            }
             /*table.selectAll('td').data(parsedCSV).text(function(d) {
                 const data = Object.values(d)[0];
                 console.log(data);
