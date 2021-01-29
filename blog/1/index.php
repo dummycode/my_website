@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/assets/style.css" />
 
     <script src="/assets/js/jquery-3.4.1.min.js"></script>
-    <script src="/assets/js/handlebars.runtime-v4.1.2.js"></script>
+    <script src="/assets/js/handlebars.runtime-v4.7.6.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
       async

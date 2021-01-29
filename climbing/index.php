@@ -27,6 +27,25 @@
         $("#sidebar-footer--mobile").html(sidebarFooterMobile)
       })
     </script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+
+    <script type="text/javascript"charset="utf-8">
+        d3.text("summits.csv", function(data) {
+            const parsedCSV = d3.csv.parseRows(data);
+            const summits = parsedCSV;
+
+            const table = d3.select("#summits")[0][0];
+
+            summits.forEach(function (summit) {
+                const tr = table.insertRow(-1);
+                summit.forEach(function (data) {
+                    var td = document.createElement('td');
+                    td = tr.insertCell(-1);
+                    td.innerHTML = data;
+                });
+            });
+        });
+    </script>
   </head>
 
   <body>
@@ -34,11 +53,27 @@
     <div class="body">
       <div class="section">
         <div class="section__title">
-          <h3>Botnet</h3>
+          <h1>Climbing</h1>
         </div>
-        <p>
-            Click <a href=".">here</a> to join the botnet.
-        </p>
+        <p>I have had the opportunity to climb some of the world's most popular, difficult, and fun mountains. Here is a list of some of the hills I have been fortunate enough to summit.</p>
+      </div>
+
+      <div class="section">
+        <div class="section__title">
+          <h1>Summits</h1>
+        </div>
+        <table id="summits" class="summits">
+            <thead>
+                <tr>
+                    <th>Summit</th>
+                    <th>Country</th>
+                    <th>Elevation (m)</th>
+                    <th>Report</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
       </div>
     <div id="sidebar-footer--mobile" class="sidebar-footer--mobile"></div>
   </body>
