@@ -45,6 +45,56 @@
                 });
             });
         });
+
+        // Sort table
+        function sortSummits(n, isDate = false) {
+            let i, x, y, shouldSwitch, switchcount = 0;
+            const table = document.getElementById("summits");
+            let switching = true;
+            let dir = "asc";
+
+            while (switching) {
+                switching = false;
+                let rows = table.rows;
+
+                for (i = 1; i < (rows.length - 1); i++) {
+                    shouldSwitch = false;
+                    x = rows[i].getElementsByTagName("TD")[n];
+                    y = rows[i + 1].getElementsByTagName("TD")[n];
+
+                    const x_inner = x.innerHTML.toLowerCase();
+                    const y_inner = y.innerHTML.toLowerCase();
+                    let x_val = x_inner;
+                    let y_val = y_inner;
+                    if (isDate) {
+                        x_val = new Date(x_val);
+                        y_val = new Date(y_val);
+                    }
+
+                    if (dir == "asc") {
+                        if (x_val > y_val) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    } else if (dir == "desc") {
+                        if (x_val < y_val) {
+                            shouldSwitch = true;
+                            break;
+                        }
+                    }
+                }
+                if (shouldSwitch) {
+                    rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                    switching = true;
+                    switchcount ++;
+                } else {
+                    if (switchcount == 0 && dir == "asc") {
+                        dir = "desc";
+                        switching = true;
+                    }
+                }
+            }
+        }
     </script>
   </head>
 
@@ -65,10 +115,10 @@
         <table id="summits" class="summits">
             <thead>
                 <tr>
-                    <th>Summit</th>
-                    <th>Country</th>
-                    <th>Elevation (m)</th>
-                    <th>Report</th>
+                    <th onclick="sortSummits(0)">Summit</th>
+                    <th onclick="sortSummits(1)">Country</th>
+                    <th onclick="sortSummits(2)">Elevation (m)</th>
+                    <th onclick="sortSummits(3, true)">Date</th>
                 </tr>
             </thead>
             <tbody>
