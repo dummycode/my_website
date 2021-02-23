@@ -91,6 +91,10 @@
     &--w2g:before {
       content: fa-content($fa-var-glasses);
     }
+
+    &--plate-mate:before {
+      content: fa-content($fa-var-car);
+    }
   }
 
   &__title {
