@@ -30,6 +30,7 @@
       const warranty = Handlebars.templates['projects/warranty']({})
       const rustos = Handlebars.templates['projects/rustos']({})
       const w2g = Handlebars.templates['projects/w2g']({})
+      const plateMate = Handlebars.templates['projects/plateMate']({})
       const projectsList = Handlebars.templates['projects/all']({})
 
       $(document).ready(function () {
@@ -44,6 +45,7 @@
         $("#projects__cubefield").html(cubefield)
         $("#projects__rustos").html(rustos);
         $("#projects__w2g").html(w2g);
+        $("#projects__plate-mate").html(plateMate);
         $("#projects-list").html(projectsList)
       })
     </script>
@@ -61,6 +63,7 @@
           <div id="projects__my-website" class="col-sm-12 col-md-6 col-lg-6 project-card"></div>
           <div id="projects__westbrook" class="col-sm-12 col-md-6 col-lg-6 project-card"></div>
           <div id="projects__cubefield" class="col-sm-12 col-md-6 col-lg-6 project-card"></div>
+          <div id="projects__plate-mate" class="col-sm-12 col-md-6 col-lg-6 project-card"></div>
           <div id="projects__dino" class="col-sm-12 col-md-6 col-lg-6 project-card"></div>
           <div id="projects__warranty" class="col-sm-12 col-md-6 col-lg-6 project-card"></div>
         </div>

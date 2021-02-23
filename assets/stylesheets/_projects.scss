@@ -181,4 +181,11 @@
       content: '\25CF  ';
     }
   }
+
+  &--swift {
+    &::before {
+      color: $color_swift;
+      content: '\25CF  ';
+    }
+  }
 }
