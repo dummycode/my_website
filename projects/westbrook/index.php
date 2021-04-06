@@ -40,6 +40,7 @@
               $("#result").text("No");
               $('body').css('background-color', '#B71C1C');
             }
+            $("#stats").text(response.stats[0] + " " + response.stats[1] + " " + response.stats[2]);
           },
           error: function(response) {
             $("#result").text("Error")
@@ -82,6 +83,7 @@
   <body onload="getStats()">
     <div class="container">
       <h1 id="result">Loading</h1>
+      <p id="stats"></p>
     </div>
   </body>
 </html>
