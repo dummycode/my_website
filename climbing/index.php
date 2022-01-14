@@ -145,7 +145,7 @@
           <h1>Running</h1>
         </div>
         <p>
-            I have also been tirelessly running some of the best trails in the world in hopes of pushing my body to the limit.
+            I have also been tirelessly running some of the best trails in hopes of pushing my body to the limit.
             Here are the top ultra distance routes I have defeated. Well, rather, those that have defeated me.
         </p>
         <table id="ultras" class="ultras">
