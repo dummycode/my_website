@@ -5,6 +5,7 @@ import { getAccessToken } from './utils'
 const baseUrl = 'http://localhost:3000'
 
 if (
+  window.location.pathname.startsWith('/projects/sms') &&
   window.location.pathname !== '/projects/sms/login/' &&
   window.sessionStorage.token === undefined
 ) {
