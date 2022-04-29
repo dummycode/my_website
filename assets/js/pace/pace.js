@@ -121,18 +121,41 @@ const stepUnits = {
     100: { step: 100, unit: 'm' },
 }
 
+function padToDigits(num, digits) {
+  return num.toString().padStart(digits, '0');
+}
+
+function convertMsToMinutesSeconds(milliseconds) {
+    const hours = Math.floor(milliseconds / 3_600_000)
+    const minutes = Math.floor(milliseconds / 60000);
+    const seconds = Math.floor((milliseconds % 60000) / 1000);
+    const millis = Math.floor((milliseconds % 1000));
+
+    let humanFriendly = ""
+
+    if (hours != 0) {
+        humanFriendly += `${hours}`
+    }
+
+
+    humanFriendly += seconds === 60
+        ? `${minutes + 1}:00`
+        : `${minutes}:${padToDigits(seconds, 2)}`;
+
+    if (millis !== 0) {
+        humanFriendly += `.${padToDigits(millis, 3)}`
+    } else {
+        humanFriendly += `.000`
+    }
+
+    return humanFriendly
+}
+
 const formatMoment = (duration) => {
-    const humanFriendly =
-    duration.minutes() + ':' + duration.seconds() + '.' + duration.milliseconds()
-
-    return moment.utc(duration.asMilliseconds()).format('mm:ss.sss');
-
-    return humanFriendly;
+  return    convertMsToMinutesSeconds(duration.asMilliseconds());
 }
 
 const calculatePace = () => {
-    console.log({distance, distanceUnit, paceUnit, splitUnit});
-
     const hoursInput = parseInt($('#hoursInput').val()) || 0
     const minutesInput = parseInt($('#minutesInput').val()) || 0
     const secondsInput = parseInt($('#secondsInput').val()) || 0
@@ -140,6 +163,11 @@ const calculatePace = () => {
     const duration = moment.duration(hoursInput + ':' + minutesInput + ':' + secondsInput);
 
     const milliseconds = duration.asMilliseconds()
+
+    if (distance == 0 || milliseconds == 0) {
+        return;
+    }
+
     const distanceInMeters = distance * raceDistances[distanceUnit]
     const millisecondsPerMeter = milliseconds / distanceInMeters || 0
     const millisecondsPerDistance = (isFinite(millisecondsPerMeter) ? millisecondsPerMeter : 0) * paceDistances[paceUnit]
@@ -151,8 +179,6 @@ const calculatePace = () => {
 }
 
 const calculateSplits = () => {
-    console.log({distance, distanceUnit, paceUnit, splitUnit});
-
     const hoursInput = parseInt($('#hoursInput').val()) || 0
     const minutesInput = parseInt($('#minutesInput').val()) || 0
     const secondsInput = parseInt($('#secondsInput').val()) || 0
@@ -160,6 +186,12 @@ const calculateSplits = () => {
     const duration = moment.duration(hoursInput + ':' + minutesInput + ':' + secondsInput);
 
     const milliseconds = duration.asMilliseconds()
+
+    console.log({ distance, milliseconds })
+    if (distance == 0 || milliseconds == 0) {
+        return;
+    }
+
     const distanceInMeters = distance * raceDistances[distanceUnit]
     const millisecondsPerMeter = milliseconds / distanceInMeters || 0
     const millisecondsPerDistance = (isFinite(millisecondsPerMeter) ? millisecondsPerMeter : milliseconds) * paceDistances[splitUnit]
@@ -183,9 +215,19 @@ const calculateSplits = () => {
     let currentDistance = 0;
     const { step, unit } = stepUnits[splitUnit]
     while (current.asMilliseconds() < milliseconds && lap < 100) {
-        lap++;
-        current = current.add(splitDuration.asMilliseconds(), 'milliseconds');
-        currentDistance += step
+        lap++
+
+        const remaining = milliseconds - current.asMilliseconds();
+        if (remaining < splitDuration.asMilliseconds()) {
+            const ratio = remaining / splitDuration.asMilliseconds()
+
+            current = current.add(splitDuration.asMilliseconds() * ratio, 'milliseconds')
+            currentDistance += step * ratio
+
+        } else {
+            current = current.add(splitDuration.asMilliseconds(), 'milliseconds');
+            currentDistance += step
+        }
 
         $("#splits-table").find('tbody')
         .append($('<tr>')
