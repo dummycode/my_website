@@ -5,8 +5,32 @@ let distanceUnit = 'mile';
 let paceUnit = 'mile';
 let splitUnit = 'mile';
 
+$(function() {
+    $('#all-paces').click(function() {
+        if ($(this).text() == "Show all") {
+            $('#all-paces-table').show();
+            $(this).text('Hide all')
+        } else {
+            $('#all-paces-table').hide();
+            $(this).text('Show all')
+        }
+
+    })
+    $('#all-splits').click(function() {
+        if ($(this).text() == "Show all") {
+            $('#all-splits-table').show();
+            $(this).text('Hide all')
+        } else {
+            $('#all-splits-table').hide();
+            $(this).text('Show all')
+        }
+
+    })
+
+})
+
+
 // Handles switching between mile/km buttons
-//
 $(function() {
     // Handle changes to distance unit buttons
     $('button.distanceUnit').click(function() {
@@ -75,11 +99,11 @@ $(function() {
     })
 
     $('#hoursInput, #minutesInput, #secondsInput, #distanceInput, .distanceUnit, .paceUnit').change(function() {
-        calculatePace();
+        calculateCurrentPace();
     })
 
     $('button.distanceUnit, button.paceUnit').click(function() {
-        calculatePace();
+        calculateCurrentPace();
     })
 
 
@@ -94,31 +118,51 @@ $(function() {
 const raceDistances = {
     marathon: 42195,
     half: 21097.5,
-    tenMile: 16093.4,
+    tenMile: 16093.44,
     tenK: 10000,
     fiveK: 5000,
-    mile: 1609.34,
+    mile: 1609.344,
     km: 1000
 };
 
 const paceDistances = {
-    mile: 1609.34,
+    mile: 1609.344,
     km: 1000,
     1600: 1600,
     800: 800,
     400: 400,
     200: 200,
-    100: 100
+    100: 100,
+    fiveK: 5000
 }
 
 const stepUnits = {
     mile: { step: 1, unit: 'mile' },
-    km: { step: 1, unit: 'km' },
-    1600: { step: 1600, unit: 'm' },
-    800: { step: 800, unit: 'm' },
-    400: { step: 400, unit: 'm' },
-    200: { step: 200, unit: 'm' },
-    100: { step: 100, unit: 'm' },
+    km: { step: 1, unit: 'kilometer' },
+    1600: { step: 1600, unit: 'meter' },
+    800: { step: 800, unit: 'meter' },
+    400: { step: 400, unit: 'meter' },
+    200: { step: 200, unit: 'meter' },
+    100: { step: 100, unit: 'meter' },
+}
+
+const paceDistancesForAllPaces = [ '100', '200', '400', '800', 'km', '1600', 'mile', 'fiveK' ]
+
+const paceDistanceNames = {
+    mile: 'Mile',
+    km: '1k',
+    1600: '1600m',
+    800: '800m',
+    400: '400m',
+    200: '200m',
+    100: '100m',
+    fiveK: '5k',
+}
+
+function roundToPlaces(num, places) {
+    var multiplier = Math.pow(10, places);
+
+    return Math.round(num * multiplier) / multiplier;
 }
 
 function padToDigits(num, digits) {
@@ -126,20 +170,22 @@ function padToDigits(num, digits) {
 }
 
 function convertMsToMinutesSeconds(milliseconds) {
-    const hours = Math.floor(milliseconds / 3_600_000)
-    const minutes = Math.floor(milliseconds / 60000);
-    const seconds = Math.floor((milliseconds % 60000) / 1000);
-    const millis = Math.floor((milliseconds % 1000));
+    let hours = Math.floor(milliseconds / 3_600_000)
+    let minutes = Math.floor((milliseconds % 3_600_000) / 60_000);
+    let seconds = Math.floor((milliseconds % 60_000) / 1000);
+    let millis = Math.floor((milliseconds % 1000));
 
     let humanFriendly = ""
 
     if (hours != 0) {
-        humanFriendly += `${hours}`
+        humanFriendly += `${hours}:`
     }
 
+    minutes = seconds === 60 ? minutes + 1 : minutes
+    minutes = hours != 0 ? padToDigits(minutes, 2) : minutes
 
     humanFriendly += seconds === 60
-        ? `${minutes + 1}:00`
+        ? `${minutes}:00`
         : `${minutes}:${padToDigits(seconds, 2)}`;
 
     if (millis !== 0) {
@@ -152,10 +198,21 @@ function convertMsToMinutesSeconds(milliseconds) {
 }
 
 const formatMoment = (duration) => {
-  return    convertMsToMinutesSeconds(duration.asMilliseconds());
+    return convertMsToMinutesSeconds(duration.asMilliseconds());
 }
 
-const calculatePace = () => {
+const calculatePace = (milliseconds, distance, distanceUnit, paceUnit) => {
+    const distanceInMeters = distance * raceDistances[distanceUnit]
+    const millisecondsPerMeter = milliseconds / distanceInMeters || 0
+    const millisecondsPerDistance = (isFinite(millisecondsPerMeter) ? millisecondsPerMeter : 0) * paceDistances[paceUnit]
+
+    const paceDuration = moment.duration(millisecondsPerDistance, 'milliseconds')
+    const humanFriendly = formatMoment(paceDuration)
+
+    return humanFriendly
+}
+
+const calculateCurrentPace = () => {
     const hoursInput = parseInt($('#hoursInput').val()) || 0
     const minutesInput = parseInt($('#minutesInput').val()) || 0
     const secondsInput = parseInt($('#secondsInput').val()) || 0
@@ -168,14 +225,36 @@ const calculatePace = () => {
         return;
     }
 
-    const distanceInMeters = distance * raceDistances[distanceUnit]
-    const millisecondsPerMeter = milliseconds / distanceInMeters || 0
-    const millisecondsPerDistance = (isFinite(millisecondsPerMeter) ? millisecondsPerMeter : 0) * paceDistances[paceUnit]
-
-    const paceDuration = moment.duration(millisecondsPerDistance, 'milliseconds')
-    const humanFriendly = formatMoment(paceDuration)
+    const humanFriendly = calculatePace(milliseconds, distance, distanceUnit, paceUnit);
 
     $("#paceInput").val(humanFriendly);
+
+    calculateAllPaces(distance, distanceUnit, milliseconds)
+}
+
+const calculateAllPaces = (distance, distanceUnit, milliseconds) => {
+    $("#all-paces-table").find("tr:gt(0)").remove();
+
+    for (const paceUnit of paceDistancesForAllPaces) {
+        const humanFriendly = calculatePace(milliseconds, distance, distanceUnit, paceUnit)
+
+        $("#all-paces-table").find('tbody')
+            .append($('<tr>')
+                .append($('<td>').text(paceDistanceNames[paceUnit]))
+                .append($('<td>').text(humanFriendly))
+            );
+    }
+}
+
+const calculateSplit = (milliseconds, distance, distanceUnit, splitUnit) => {
+    const distanceInMeters = distance * raceDistances[distanceUnit]
+    const millisecondsPerMeter = milliseconds / distanceInMeters || 0
+    const millisecondsPerDistance = (isFinite(millisecondsPerMeter) ? millisecondsPerMeter : milliseconds) * paceDistances[splitUnit]
+
+    const splitDuration = moment.duration(millisecondsPerDistance, 'milliseconds')
+    const humanFriendly = formatMoment(splitDuration)
+
+    return [humanFriendly, millisecondsPerMeter, splitDuration]
 }
 
 const calculateSplits = () => {
@@ -187,19 +266,11 @@ const calculateSplits = () => {
 
     const milliseconds = duration.asMilliseconds()
 
-    console.log({ distance, milliseconds })
     if (distance == 0 || milliseconds == 0) {
         return;
     }
 
-    const distanceInMeters = distance * raceDistances[distanceUnit]
-    const millisecondsPerMeter = milliseconds / distanceInMeters || 0
-    const millisecondsPerDistance = (isFinite(millisecondsPerMeter) ? millisecondsPerMeter : milliseconds) * paceDistances[splitUnit]
-
-    const splitDuration = moment.duration(millisecondsPerDistance, 'milliseconds')
-    const humanFriendly = formatMoment(splitDuration)
-
-    console.log({splitDuration});
+    const [humanFriendly, millisecondsPerMeter, splitDuration] = calculateSplit(milliseconds, distance, distanceUnit, splitUnit)
 
     $("#splitInput").val(humanFriendly);
 
@@ -215,29 +286,47 @@ const calculateSplits = () => {
     let currentDistance = 0;
     const { step, unit } = stepUnits[splitUnit]
     while (current.asMilliseconds() < milliseconds && lap < 100) {
-        lap++
-
         const remaining = milliseconds - current.asMilliseconds();
-        if (remaining < splitDuration.asMilliseconds()) {
-            const ratio = remaining / splitDuration.asMilliseconds()
 
-            current = current.add(splitDuration.asMilliseconds() * ratio, 'milliseconds')
-            currentDistance += step * ratio
+        let ratio;
+        if (remaining < splitDuration.asMilliseconds()) {
+            ratio = remaining / splitDuration.asMilliseconds()
 
         } else {
-            current = current.add(splitDuration.asMilliseconds(), 'milliseconds');
-            currentDistance += step
+            ratio = 1
         }
+
+        current = current.add(splitDuration.asMilliseconds() * ratio, 'milliseconds')
+        currentDistance += step * ratio
+        lap += 1 * ratio
+
 
         $("#splits-table").find('tbody')
         .append($('<tr>')
-            .append($('<td>').text(lap))
+            .append($('<td>').text(roundToPlaces(lap, 2)))
             .append($('<td>').text(formatMoment(current)))
-            .append($('<td>').text(currentDistance + " " + unit))
+            .append($('<td>').text(roundToPlaces(currentDistance, 2) + " " + unit + (currentDistance !== 1 ? "s" : "")))
         );
-        console.log({lap, time: formatMoment(current), currentDistance, unit});
+    }
+
+    // calculateAllSplits(milliseconds)
+}
+
+const calculateAllSplits = (distance, distanceUnit, milliseconds) => {
+    $("#all-splits-table").find("tr:gt(0)").remove();
+
+    for (const [splitUnit, splitDistance] of Object.entries(paceDistances)) {
+        const humanFriendly = calculateSplit(milliseconds, distance, distanceUnit, splitUnit)
+
+        $("#all-splits-table").find('tbody')
+            .append($('<tr>')
+                .append($('<td>').text(paceUnit))
+                .append($('<td>').text(humanFriendly))
+            );
     }
 }
 
-window.calculatePace = calculatePace
+
+
+window.calculateCurrentPace = calculateCurrentPace
 

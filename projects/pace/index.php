@@ -45,9 +45,9 @@
         </div>
         <form id="pace-form" onsubmit="return false;">
           <p>Time</p>
-          <input name="hours" id="hoursInput" type="numeric" step="any" min="0" max="60" placeholder="00"/><span class="timeUnit">h</span>
-          <input name="minutes" id="minutesInput" type="numeric" step="any" min="0" max="59" placeholder="00"/><span class="timeUnit">m</span>
-          <input name="seconds" id="secondsInput" type="numeric" step="any" min="0" max="59" placeholder="00"/><span class="timeUnit">s</span>
+          <input name="hours" id="hoursInput" class="units" type="numeric" step="any" min="0" max="60" placeholder="00"/><span class="timeUnit">h</span>
+          <input name="minutes" id="minutesInput" class="units" type="numeric" step="any" min="0" max="59" placeholder="00"/><span class="timeUnit">m</span>
+          <input name="seconds" id="secondsInput" class="units" type="numeric" step="any" min="0" max="59" placeholder="00"/><span class="timeUnit">s</span>
 
           <p>Distance</p>
           <input name="distance" id="distanceInput" type="numeric" step="any" min="0" placeholder="00" />
@@ -65,21 +65,25 @@
             </select>
 
           <p>Pace</p>
-          <input name="pace" id="paceInput" type="text" step="any" placeholder="Distance" disabled="true"/>
+          <input name="pace" id="paceInput" type="text" step="any" placeholder="Distance" disabled="true" class="wide"/>
           <button name="mileUnit" class="paceUnit selected" value="mile">Mile</button>
           <button name="kmUnit" class="paceUnit" value="km">KM</button>
-                <select name="mUnit" id="paceMeterUnit" class="paceUnit">
-                <option disabled selected value>m</option>
-              <option value="1600">1600m</option>
-              <option value="800">800m</option>
-              <option value="400">400m</option>
-              <option value="200">200m</option>
-              <option value="100">100m</option>
-            </select>
+          <select name="mUnit" id="paceMeterUnit" class="paceUnit">
+            <option disabled selected value>m</option>
+            <option value="1600">1600m</option>
+            <option value="800">800m</option>
+            <option value="400">400m</option>
+            <option value="200">200m</option>
+            <option value="100">100m</option>
+          </select>
+          <a href="#" id="all-paces">Show all</a>
+          <table id="all-paces-table" style="display: none">
+                <tr><th>Distance</th><th>Pace</th></tr>
+          </table>
 
 
           <p>Splits</p>
-            <input name="split" id="splitInput" type="text" step="any" placeholder="Splits" disabled="true" />
+            <input name="split" id="splitInput" type="text" step="any" placeholder="Splits" disabled="true" class="wide" />
               <button name="mileUnit" class="splitUnit selected" value="mile">Mile</button>
               <button name="kmUnit" class="splitUnit" value="km">KM</button>
                 <select name="mUnit" id="splitMeterUnit" class="splitUnit">
@@ -90,9 +94,13 @@
               <option value="200">200m</option>
               <option value="100">100m</option>
             </select>
+<!--
+            <a href="#" id="all-splits">Show all</a>
+-->
             <table id="splits-table">
                 <tr><th>Lap</th><th>Time</th><th>Distance</th></tr>
             </table>
+
 </div>
         </form>
       </div>
