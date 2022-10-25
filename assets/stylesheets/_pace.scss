@@ -1,0 +1,26 @@
+.paceUnit, .splitUnit, .distanceUnit {
+    &.selected {
+        color: blue;
+    }
+}
+
+#pace-form {
+    input {
+        width: 5rem;
+        text-align: right;
+
+        &.units {
+          padding-right: 1rem;
+        }
+
+        &.wide {
+            width: 8rem;
+            text-align: left;
+        }
+    }
+
+    .timeUnit {
+        margin-left: -1rem;
+    }
+}
+
