@@ -86,9 +86,7 @@
                     if (isDate) {
                         x_val = new Date(x_val);
                         y_val = new Date(y_val);
-                    }
-
-                    if (parseInt(x_val.replace(/,/g, '')) !== NaN && parseInt(y_val.replace(/,/g, '')) !== NaN) {
+                    } else if (parseInt(x_val.replace(/,/g, '')) !== NaN && parseInt(y_val.replace(/,/g, '')) !== NaN) {
                         x_val = parseInt(x_val.replace(/,/g, ''));
                         y_val = parseInt(y_val.replace(/,/g, ''));
                     }
