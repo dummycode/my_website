@@ -88,6 +88,11 @@
                         y_val = new Date(y_val);
                     }
 
+                    if (parseInt(x_val.replace(/,/g, '')) !== NaN && parseInt(y_val.replace(/,/g, '')) !== NaN) {
+                        x_val = parseInt(x_val.replace(/,/g, ''));
+                        y_val = parseInt(y_val.replace(/,/g, ''));
+                    }
+
                     if (dir == "asc") {
                         if (x_val > y_val) {
                             shouldSwitch = true;
@@ -145,7 +150,7 @@
           <h1>Running</h1>
         </div>
         <p>
-            I have also been tirelessly running some of the best trails in hopes of pushing my body to the limit.
+            I also seek some continously love to push my body to the limit by see how far and long my feet can take me.
             Here are the top ultra distance routes I have defeated. Well, rather, those that have defeated me.
         </p>
         <table id="ultras" class="ultras">
