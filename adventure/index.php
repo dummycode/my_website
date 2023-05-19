@@ -123,11 +123,7 @@
     <div class="body">
       <div class="section">
         <div class="section__title">
-<<<<<<< HEAD:climbing/index.php
           <h1>Summits</h1>
-=======
-          <h1>Alpinism</h1>
->>>>>>> wip:adventure/index.php
         </div>
         <p>
             I have had the opportunity to climb some of the world's most popular, difficult, and fun mountains.
