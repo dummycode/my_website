@@ -17,6 +17,7 @@
 
       gtag('config', 'UA-149253046-1');
     </script>
+    <script src="/assets/js/handlebars.runtime-v4.7.6.js"></script>
     <script src="/assets/js/templatesCompiled.js"></script>
     <script>
       const sidebar = Handlebars.templates['sidebar/sidebar']({})
@@ -37,7 +38,7 @@
         </div>
         <div class="section--experience__job">Software Engineer</div>
         <p class="section--experience__description">
-          Working on Gotham's suite of artificial intelligence (AI) tools
+          Working on Gotham's suite of artificial intelligence (AI) tools, core data model, and ontology
         </p>
       </div>
 
