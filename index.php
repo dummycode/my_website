@@ -38,7 +38,7 @@
         </div>
         <p>
           Hi, my name is Henry Harris. I am currently a software engineer at Palantir Technologies. Previously, I received my Bachelor of Science in Computer Science from the Georgia Institute of Technology, better known as Georgia Tech.
-          At Palantir, most of my time is dedicated to working on Palantir Gotham's suite of artificial intelligence (AI) tools.
+          At Palantir, most of my time has been dedicated to working on Palantir Gotham's suite of artificial intelligence (AI) tools, the platform's core data model, and the Palantir ontology.
         </p>
       </div>
       <div id="story" class="section">
@@ -59,9 +59,10 @@
           <h1>Hobbies</h1>
         </div>
         <p>
-          In my free time I enjoy exercising and the great outdoors -- specifically running, cycling, climbing, mountaineering, and skiing.
-          I also love to travel the world. My favorite trip ever is the trip to Morocco I took while studying abroad in Barcelona during the summer of 2018.
-          There, we visited Fes, toured the Atlas Mountains, rode camels into the Sahara desert where we spent the night in traditional Berber tents, played Moroccan drums with locals in Tingher Province, and navigated the bustling markets of Marrakech.
+          In my free time I enjoy exercising and the great outdoors -- specifically running, ultrarunning, climbing, mountaineering, alpinism, and skiing.
+          I currently live in central Colorado, in a small town called Salida, where I am able to trail run and explore the high peaks right from my front door.
+          While my main motivation for training is to be capable of moving through the mountains quickly, I enjoy the occasional sufferfest at an organized event as well.
+          Follow my adventure on <a href="https://www.strava.com/athletes/20856911">Strava</a>.
         </p>
       </div>
     </div>
