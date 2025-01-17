@@ -22,8 +22,8 @@
       gtag('config', 'UA-149253046-1');
     </script>
     <script src="/assets/js/handlebars.runtime-v4.7.6.js"></script>
-    <script src="/assets/js/templatesCompiled.js"></script>
-    <script src="/assets/bundle.js"></script>
+    <script src="/assets/js/templatesCompiled.js?version=1"></script>
+    <script src="/assets/bundle.js?version=1"></script>
 
     <script>
       const sidebar = Handlebars.templates['sidebar/sidebar']({})
