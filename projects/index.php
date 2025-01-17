@@ -17,7 +17,7 @@
 
       gtag('config', 'UA-149253046-1');
     </script>
-    <script src="/assets/js/templatesCompiled.js"></script>
+    <script src="/assets/js/templatesCompiled.js?version=1"></script>
     <script>
       const sidebar = Handlebars.templates['sidebar/sidebar']({})
       const sidebarFooterMobile = Handlebars.templates['footer/mobile']({})
@@ -31,6 +31,7 @@
       const rustos = Handlebars.templates['projects/rustos']({})
       const w2g = Handlebars.templates['projects/w2g']({})
       const plateMate = Handlebars.templates['projects/plateMate']({})
+      const pace = Handlebars.templates['projects/pace']({})
       const projectsList = Handlebars.templates['projects/all']({})
 
       $(document).ready(function () {
@@ -46,6 +47,7 @@
         $("#projects__rustos").html(rustos);
         $("#projects__w2g").html(w2g);
         $("#projects__plate-mate").html(plateMate);
+        $("#projects__pace").html(pace);
         $("#projects-list").html(projectsList)
       })
     </script>
@@ -57,6 +59,7 @@
       <div class="projects-favorites">
         <div class="row">
           <div id="projects__sms" class="col-sm-12 col-md-6 col-lg-6 project-card"></div>
+          <div id="projects__pace" class="col-sm-12 col-md-6 col-lg-6 project-card"></div>
           <div id="projects__rustos" class="col-sm-12 col-md-6 col-lg-6 project-card"></div>
           <div id="projects__quick-queue" class="col-sm-12 col-md-6 col-lg-6 project-card"></div>
           <div id="projects__w2g" class="col-sm-12 col-md-6 col-lg-6 project-card"></div>

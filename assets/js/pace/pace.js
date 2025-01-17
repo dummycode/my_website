@@ -131,6 +131,7 @@ const paceDistances = {
     1600: 1600,
     800: 800,
     400: 400,
+    300: 300,
     200: 200,
     100: 100,
     fiveK: 5000
@@ -142,11 +143,12 @@ const stepUnits = {
     1600: { step: 1600, unit: 'meter' },
     800: { step: 800, unit: 'meter' },
     400: { step: 400, unit: 'meter' },
+    300: { step: 300, unit: 'meter' },
     200: { step: 200, unit: 'meter' },
     100: { step: 100, unit: 'meter' },
 }
 
-const paceDistancesForAllPaces = [ '100', '200', '400', '800', 'km', '1600', 'mile', 'fiveK' ]
+const paceDistancesForAllPaces = [ '100', '200', '300', '400', '800', 'km', '1600', 'mile', 'fiveK' ]
 
 const paceDistanceNames = {
     mile: 'Mile',
@@ -154,6 +156,7 @@ const paceDistanceNames = {
     1600: '1600m',
     800: '800m',
     400: '400m',
+    300: '300m',
     200: '200m',
     100: '100m',
     fiveK: '5k',

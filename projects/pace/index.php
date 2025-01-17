@@ -22,8 +22,8 @@
       gtag('config', 'UA-149253046-1');
     </script>
     <script src="/assets/js/handlebars.runtime-v4.7.6.js"></script>
-    <script src="/assets/js/templatesCompiled.js"></script>
-    <script src="/assets/bundle.js"></script>
+    <script src="/assets/js/templatesCompiled.js?version=1"></script>
+    <script src="/assets/bundle.js?version=1"></script>
 
     <script>
       const sidebar = Handlebars.templates['sidebar/sidebar']({})
@@ -73,6 +73,7 @@
             <option value="1600">1600m</option>
             <option value="800">800m</option>
             <option value="400">400m</option>
+            <option value="300">300m</option>
             <option value="200">200m</option>
             <option value="100">100m</option>
           </select>
@@ -91,6 +92,7 @@
               <option value="1600">1600m</option>
               <option value="800">800m</option>
               <option value="400">400m</option>
+              <option value="300">300m</option>
               <option value="200">200m</option>
               <option value="100">100m</option>
             </select>
