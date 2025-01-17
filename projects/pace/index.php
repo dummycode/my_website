@@ -73,6 +73,7 @@
             <option value="1600">1600m</option>
             <option value="800">800m</option>
             <option value="400">400m</option>
+            <option value="300">300m</option>
             <option value="200">200m</option>
             <option value="100">100m</option>
           </select>
