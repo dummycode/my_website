@@ -122,7 +122,8 @@ const raceDistances = {
     tenK: 10000,
     fiveK: 5000,
     mile: 1609.344,
-    km: 1000
+    km: 1000,
+    m: 1
 };
 
 const paceDistances = {
