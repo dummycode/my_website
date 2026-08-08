@@ -1,0 +1,16 @@
+---
+import LegacyContent from './LegacyContent.astro'
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+interface Props {
+  source: string
+}
+---
+
+<BaseLayout sidebar={false}>
+  <LegacyContent source={Astro.props.source} />
+</BaseLayout>
+
+<script>
+  import '../../assets/js/sms/sms.js'
+</script>

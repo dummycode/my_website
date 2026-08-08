@@ -1,0 +1,53 @@
+---
+import Sidebar from '../components/Sidebar.astro'
+import MobileFooter from '../components/MobileFooter.astro'
+import '../../assets/bootstrap.min.css'
+import '../../assets/stylesheets/application.scss'
+import jqueryUrl from '../../assets/js/jquery-3.4.1.min.js?url'
+import momentUrl from '../../assets/js/utils/moment.min.js?url'
+
+interface Props {
+  title?: string
+  description?: string
+  sidebar?: boolean
+  bodyClass?: string
+}
+
+const {
+  title = 'Henry Harris',
+  description = 'The personal website of software engineer Henry Harris.',
+  sidebar = true,
+  bodyClass = '',
+} = Astro.props
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>{title}</title>
+    <script is:inline src={jqueryUrl}></script>
+    <script is:inline src={momentUrl}></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-149253046-1"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || []
+      function gtag() { window.dataLayer.push(arguments) }
+      gtag('js', new Date())
+      gtag('config', 'UA-149253046-1')
+    </script>
+    <slot name="head" />
+  </head>
+  <body class={bodyClass}>
+    {sidebar && <Sidebar />}
+    <slot />
+    {sidebar && <MobileFooter />}
+  </body>
+</html>

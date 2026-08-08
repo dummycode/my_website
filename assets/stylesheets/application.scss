@@ -1,20 +1,12 @@
-@import "lib/fa/fontawesome.scss";
-@import "lib/fa/solid.scss";
-@import "lib/fa/brands.scss";
-@import "lib/fa/regular.scss";
-
-@import "mixins";
-@import "variables";
-@import "colors";
-@import "global";
-@import "sidebar";
-@import "body";
-@import "projects";
-@import "experience";
-@import "blog";
-@import "sms";
-@import "errors";
-@import "animations";
-@import "tables";
-@import "pace";
-
+@use "fontawesome";
+@use "global";
+@use "sidebar";
+@use "body";
+@use "projects";
+@use "experience";
+@use "blog";
+@use "sms";
+@use "errors";
+@use "animations";
+@use "tables";
+@use "pace";

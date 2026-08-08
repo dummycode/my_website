@@ -5,6 +5,11 @@
 }
 
 #pace-form {
+    .pace-form__time-control {
+        align-items: center;
+        display: inline-flex;
+    }
+
     input {
         width: 5rem;
         text-align: right;
@@ -23,4 +28,3 @@
         margin-left: -1rem;
     }
 }
-

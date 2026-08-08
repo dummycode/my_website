@@ -1,0 +1,25 @@
+---
+import SocialLinks from './SocialLinks.astro'
+---
+
+<aside class="sidebar">
+  <div class="sidebar__image">
+    <img
+      src="https://104101110114121.s3.us-east-2.amazonaws.com/images/me.png"
+      alt="Henry Harris"
+      width="200"
+      height="200"
+    />
+  </div>
+  <div class="sidebar__title">
+    <a href="/"><h1>Henry Harris</h1></a>
+  </div>
+  <nav class="sidebar-nav" aria-label="Primary navigation">
+    <a href="/projects" class="sidebar-nav__link">Projects</a>
+    <a href="/experience" class="sidebar-nav__link">Experience</a>
+    <a href="/adventure" class="sidebar-nav__link">Adventure</a>
+  </nav>
+  <div class="sidebar-footer--desktop">
+    <SocialLinks />
+  </div>
+</aside>

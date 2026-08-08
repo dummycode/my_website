@@ -5,3 +5,9 @@ assets/bundle.js
 .sass-cache
 .DS_STORE
 *.swp
+
+# Astro / Node
+dist/
+.astro/
+node_modules/
+npm-debug.log*

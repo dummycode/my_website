@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro'
+---
+
+<BaseLayout title="Henry Harris - Projects" sidebar={false} bodyClass="westbrook-page">
+  <main class="westbrook-container">
+    <h1 id="result">Loading</h1>
+    <p id="stats"></p>
+  </main>
+</BaseLayout>
+
+<script>
+  const result = document.querySelector<HTMLElement>('#result')!
+  const stats = document.querySelector<HTMLElement>('#stats')!
+  fetch('https://evening-shore-05569.herokuapp.com')
+    .then((response) => {
+      if (!response.ok) throw new Error('Request failed')
+      return response.json()
+    })
+    .then((response) => {
+      result.textContent = response.answer ? 'Yes' : 'No'
+      document.body.style.backgroundColor = response.answer ? '#2E7D32' : '#B71C1C'
+      stats.textContent = response.stats.join(' ')
+    })
+    .catch(() => { result.textContent = 'Error' })
+</script>
+
+<style is:global>
+  .westbrook-page { background-color: #0d47a1; color: #fff; }
+  .westbrook-container { text-align: center; min-height: 100vh; display: flex; flex-direction: column; justify-content: center; }
+  .westbrook-container h1 { margin: 0; font-size: 128px; font-weight: 300; }
+  @media (min-width: 768px) { .westbrook-container h1 { font-size: 256px; } }
+</style>

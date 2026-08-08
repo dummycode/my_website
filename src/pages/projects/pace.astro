@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+---
+
+<BaseLayout>
+  <main class="body">
+    <section class="section">
+      <div class="section__title"><h3>Pace Calculator</h3></div>
+      <form id="pace-form" onsubmit="return false;">
+        <p>Time</p>
+        <div class="inline-controls">
+          <span class="pace-form__time-control"><input name="hours" id="hoursInput" class="units" type="numeric" step="any" min="0" max="60" placeholder="00"/><span class="timeUnit">h</span></span>
+          <span class="pace-form__time-control"><input name="minutes" id="minutesInput" class="units" type="numeric" step="any" min="0" max="59" placeholder="00"/><span class="timeUnit">m</span></span>
+          <span class="pace-form__time-control"><input name="seconds" id="secondsInput" class="units" type="numeric" step="any" min="0" max="59" placeholder="00"/><span class="timeUnit">s</span></span>
+        </div>
+
+        <p>Distance</p>
+        <div class="inline-controls">
+          <input name="distance" id="distanceInput" type="numeric" step="any" min="0" placeholder="00" />
+          <button name="mileUnit" class="distanceUnit selected" value="mile">Mile(s)</button>
+          <button name="kmUnit" class="distanceUnit" value="km">KM(s)</button>
+          <button name="mUnit" class="distanceUnit" value="m">Meter(s)</button>
+          <select name="raceUnit" id="raceUnit" class="distanceUnit">
+            <option disabled selected value>Race</option><option value="marathon">Marathon</option>
+            <option value="half">Half</option><option value="tenMile">10 mile</option>
+            <option value="tenK">10k</option><option value="fiveK">5k</option><option value="mile">Mile</option>
+          </select>
+        </div>
+
+        <p>Pace</p>
+        <div class="inline-controls">
+          <input name="pace" id="paceInput" type="text" step="any" placeholder="Distance" disabled class="wide"/>
+          <button name="mileUnit" class="paceUnit selected" value="mile">Mile</button>
+          <button name="kmUnit" class="paceUnit" value="km">KM</button>
+          <select name="mUnit" id="paceMeterUnit" class="paceUnit">
+            <option disabled selected value>m</option><option value="1600">1600m</option>
+            <option value="800">800m</option><option value="400">400m</option>
+            <option value="300">300m</option><option value="200">200m</option><option value="100">100m</option>
+          </select>
+          <a href="#" id="all-paces">Show all</a>
+        </div>
+        <table id="all-paces-table" style="display: none"><tbody><tr><th>Distance</th><th>Pace</th></tr></tbody></table>
+
+        <p>Splits</p>
+        <div class="inline-controls">
+          <input name="split" id="splitInput" type="text" step="any" placeholder="Splits" disabled class="wide" />
+          <button name="mileUnit" class="splitUnit selected" value="mile">Mile</button>
+          <button name="kmUnit" class="splitUnit" value="km">KM</button>
+          <select name="mUnit" id="splitMeterUnit" class="splitUnit">
+            <option disabled selected value>m</option><option value="1600">1600m</option>
+            <option value="800">800m</option><option value="400">400m</option>
+            <option value="300">300m</option><option value="200">200m</option><option value="100">100m</option>
+          </select>
+        </div>
+        <table id="splits-table"><tbody><tr><th>Lap</th><th>Time</th><th>Distance</th></tr></tbody></table>
+      </form>
+    </section>
+  </main>
+</BaseLayout>
+
+<script>
+  import '../../../assets/js/pace/pace.js'
+</script>

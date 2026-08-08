@@ -1,3 +1,5 @@
+@use "mixins" as *;
+
 .error {
   align-items: center;
   display: flex;

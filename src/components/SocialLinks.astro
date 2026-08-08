@@ -1,0 +1,25 @@
+---
+interface Props {
+  includeTwitter?: boolean
+}
+
+const { includeTwitter = false } = Astro.props
+const socialLinks = [
+  { href: '/resume.pdf', icon: 'far fa-file-pdf', label: 'Resume' },
+  { href: 'mailto:mail@henryharr.is', icon: 'far fa-envelope', label: 'Email' },
+  { href: 'https://github.com/dummycode', icon: 'fab fa-github', label: 'GitHub' },
+  ...(includeTwitter
+    ? [{ href: 'https://twitter.com/its_hth', icon: 'fab fa-twitter', label: 'Twitter' }]
+    : []),
+  { href: 'https://www.strava.com/athletes/20856911', icon: 'fab fa-strava', label: 'Strava' },
+  { href: 'https://linkedin.com/in/henrythomasharris', icon: 'fab fa-linkedin-in', label: 'LinkedIn' },
+]
+---
+
+<div class="sidebar-social">
+  {socialLinks.map(({ href, icon, label }) => (
+    <a href={href} class="sidebar-social__icon" aria-label={label}>
+      <i class={icon} aria-hidden="true"></i>
+    </a>
+  ))}
+</div>

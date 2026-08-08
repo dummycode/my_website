@@ -1,0 +1,19 @@
+{
+  "name": "my-website",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build && mkdir -p dist/assets && cp -R assets/img assets/lib dist/assets/",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^7.1.4",
+    "sass": "^1.89.0"
+  }
+}

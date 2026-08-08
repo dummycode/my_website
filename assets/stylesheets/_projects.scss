@@ -1,3 +1,6 @@
+@use "colors" as *;
+@use "mixins" as *;
+
 .projects-favorites {
   margin: -12px;
 }
@@ -57,43 +60,43 @@
     }
 
     &--quick-queue:before {
-      content: fa-content($fa-var-list);
+      content: "\f03a";
     }
 
     &--my-website:before {
-      content: fa-content($fa-var-laptop-code);
+      content: "\f5fc";
     }
 
     &--dino:before {
-      content: fa-content($fa-var-gamepad);
+      content: "\f11b";
     }
 
     &--westbrook:before {
-      content: fa-content($fa-var-basketball-ball);
+      content: "\f434";
     }
 
     &--sms:before {
-      content: fa-content($fa-var-sms);
+      content: "\f7cd";
     }
 
     &--cubefield:before {
-      content: fa-content($fa-var-cube);
+      content: "\f1b2";
     }
 
     &--warranty:before {
-      content: fa-content($fa-var-clock);
+      content: "\f017";
     }
 
     &--rustos:before {
-      content: fa-content($fa-var-laptop);
+      content: "\f109";
     }
 
     &--w2g:before {
-      content: fa-content($fa-var-glasses);
+      content: "\f530";
     }
 
     &--plate-mate:before {
-      content: fa-content($fa-var-car);
+      content: "\f1b9";
     }
   }
 
@@ -118,6 +121,9 @@
   }
 
   &__languages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
     margin-top: auto;
     line-height: 1em;
 
@@ -132,8 +138,6 @@
 }
 
 .language-tag {
-  margin-right: 5px;
-
   &--js {
     &::before {
       color: $color_js;

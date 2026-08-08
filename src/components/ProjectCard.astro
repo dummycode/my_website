@@ -1,0 +1,23 @@
+---
+interface Props {
+  slug: string
+  title: string
+  href: string
+  description: string
+  languages: Array<{ name: string; slug: string }>
+}
+
+const { slug, title, href, description, languages } = Astro.props
+---
+
+<div class="col-sm-12 col-md-6 col-lg-6 project-card">
+  <article class={`project-card__container project-card__container--${slug}`}>
+    <h1 class="project-card__title"><a href={href}>{title}</a></h1>
+    <p class="project-card__description" set:html={description} />
+    <div class="project-card__languages">
+      {languages.map(({ name, slug: languageSlug }) => (
+        <span class={`language-tag language-tag--${languageSlug}`}>{name}</span>
+      ))}
+    </div>
+  </article>
+</div>

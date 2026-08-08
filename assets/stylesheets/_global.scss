@@ -1,3 +1,6 @@
+@use "colors" as *;
+@use "mixins" as *;
+
 html {
   scroll-behavior: smooth;
 }
@@ -45,4 +48,11 @@ body {
 
 .hidden {
   display: none;
+}
+
+.inline-controls {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
 }

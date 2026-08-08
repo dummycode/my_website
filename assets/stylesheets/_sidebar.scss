@@ -1,3 +1,6 @@
+@use "colors" as *;
+@use "mixins" as *;
+
 .sidebar {
   top: 0;
   left: 0;
@@ -90,10 +93,6 @@
 
 .sidebar-footer {
   &--desktop {
-    @include md-down {
-      display: none;
-    }
-
     display: flex;
     flex-direction: column;
     margin-top: auto;
@@ -103,19 +102,23 @@
     &__message {
       font-size: 12px;
     }
+
+    @include md-down {
+      display: none;
+    }
   }
 
   &--mobile {
-    @include lg-up {
-      display: none;
-    }
-
     display: flex;
     flex-direction: column;
     margin-top: auto;
     width: 100%;
     align-items: center;
     padding: 10px 0;
+
+    @include lg-up {
+      display: none;
+    }
   }
 }
 

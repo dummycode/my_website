@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+import summitsCsv from '../../adventure/summits.csv?raw'
+import ultrasCsv from '../../adventure/ultras.csv?raw'
+
+const parseCsv = (csv: string) => csv.trim().split(/\r?\n/).map((line) =>
+  Array.from(line.matchAll(/(?:^|,)(?:"([^"]*)"|([^,]*))/g), (match) => match[1] ?? match[2]),
+)
+
+const summits = parseCsv(summitsCsv)
+const ultras = parseCsv(ultrasCsv)
+---
+
+<BaseLayout>
+  <main class="body">
+    <section class="section">
+      <div class="section__title"><h1>Summits</h1></div>
+      <p>
+        I have had the opportunity to climb some of the world's most popular, difficult, and fun
+        mountains. Here is a list of some of the hills I have been fortunate enough to summit.
+      </p>
+      <table id="summits" class="summits sortable-table">
+        <thead><tr>
+          <th data-type="text">Summit</th><th data-type="text">Country</th>
+          <th data-type="number">Elevation (m)</th><th data-type="date">Date</th>
+        </tr></thead>
+        <tbody>{summits.map((row) => <tr>{row.map((cell) => <td>{cell}</td>)}</tr>)}</tbody>
+      </table>
+    </section>
+    <section class="section">
+      <div class="section__title"><h1>Running</h1></div>
+      <p>
+        I also seek some continously love to push my body to the limit by see how far and long my
+        feet can take me. Here are the top ultra distance routes I have defeated. Well, rather,
+        those that have defeated me.
+      </p>
+      <table id="ultras" class="ultras sortable-table">
+        <thead><tr>
+          <th data-type="text">Name</th><th data-type="text">Country</th>
+          <th data-type="number">Distance (km)</th><th data-type="number">Vertical (m)</th>
+          <th data-type="date">Date</th>
+        </tr></thead>
+        <tbody>{ultras.map((row) => <tr>{row.map((cell) => <td>{cell}</td>)}</tr>)}</tbody>
+      </table>
+    </section>
+  </main>
+</BaseLayout>
+
+<script>
+  const valueFor = (cell: HTMLTableCellElement, type: string) => {
+    const value = cell.textContent?.trim() ?? ''
+    if (type === 'number') return Number(value.replaceAll(',', ''))
+    if (type === 'date') return new Date(value).getTime()
+    return value.toLocaleLowerCase()
+  }
+
+  document.querySelectorAll<HTMLTableElement>('.sortable-table').forEach((table) => {
+    table.querySelectorAll<HTMLTableCellElement>('th').forEach((header, column) => {
+      header.tabIndex = 0
+      header.setAttribute('role', 'button')
+      const sort = () => {
+        const body = table.tBodies[0]
+        const direction = header.dataset.direction === 'asc' ? -1 : 1
+        const type = header.dataset.type ?? 'text'
+        const rows = Array.from(body.rows).sort((left, right) => {
+          const a = valueFor(left.cells[column], type)
+          const b = valueFor(right.cells[column], type)
+          return (a < b ? -1 : a > b ? 1 : 0) * direction
+        })
+        table.querySelectorAll('th').forEach((item) => delete item.dataset.direction)
+        header.dataset.direction = direction === 1 ? 'asc' : 'desc'
+        body.append(...rows)
+      }
+      header.addEventListener('click', sort)
+      header.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') sort()
+      })
+    })
+  })
+</script>

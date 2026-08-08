@@ -1,3 +1,6 @@
+@use "colors" as *;
+@use "mixins" as *;
+
 .section {
   &--experience {
     @include md-down {

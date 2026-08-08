@@ -1,0 +1,26 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const roles = [
+  ['palantir', 'Palantir', 'Software Engineer', "Working on Gotham's suite of artificial intelligence (AI) tools, core data model, and ontology"],
+  ['sfdc', 'Salesforce', 'Software Engineer Intern', "Member of the Identity team at Heroku: responsible for all things authentication and authorization for Heroku's Platform API"],
+  ['bnr', 'Big Nerd Ranch', 'Software Engineer Intern', 'Consulted on a client project developing a custom content management system built in Ruby on Rails with a React Redux UI'],
+  ['sl', 'Seller Labs', 'Software Engineer Intern', 'Worked on an internal account management and billing system with PHP Laravel backend and a React Redux frontend'],
+  ['tech', 'Georgia Institute of Technology', 'Head Teaching Assistant', 'Organize, lead, and manage team of ten TAs in charge of 250+ students'],
+  ['nedzas', "Nedza's Waffles", 'Co-Founder', "Won University of Georgia's Idea Accelerator and grew company to ten employees working multiple events per week"],
+]
+---
+
+<BaseLayout>
+  <main class="body">
+    {roles.map(([slug, company, job, description]) => (
+      <section class="section section--experience">
+        <div class={`section__title section--experience__title section--experience__title--${slug}`}>
+          <h1>{company}</h1>
+        </div>
+        <div class="section--experience__job">{job}</div>
+        <p class="section--experience__description">{description}</p>
+      </section>
+    ))}
+  </main>
+</BaseLayout>

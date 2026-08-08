@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+---
+
+<BaseLayout>
+  <main class="body">
+    <section class="section">
+      <div class="section__title"><h3>Epoch Converter</h3></div>
+      <p><span id="epoch-time"></span> is <strong><span id="epoch-human"></span></strong></p>
+      <form id="epoch-form">
+        <p>Timestamp:</p>
+        <div class="inline-controls">
+          <input name="epoch" type="text" inputmode="numeric" placeholder="Timestamp" />
+          <input type="submit" value="Convert" />
+        </div>
+        <p id="epoch__error" hidden>Timestamp must be a valid epoch timestamp</p>
+      </form>
+    </section>
+    <section class="section">
+      <div class="section__title"><h3>Current Time</h3></div>
+      <p>The current time is <a href="" id="now-link">now</a>.</p>
+    </section>
+  </main>
+</BaseLayout>
+
+<script>
+  const epochElement = document.querySelector<HTMLElement>('#epoch-time')!
+  const humanElement = document.querySelector<HTMLElement>('#epoch-human')!
+  const input = document.querySelector<HTMLInputElement>('#epoch-form input[name="epoch"]')!
+  const error = document.querySelector<HTMLElement>('#epoch__error')!
+
+  const showEpoch = (epoch: number) => {
+    const date = new Date(epoch * 1000)
+    if (!Number.isFinite(epoch) || Number.isNaN(date.getTime())) return false
+    const day = date.getUTCDate()
+    const ordinal = day % 10 === 1 && day % 100 !== 11
+      ? 'st'
+      : day % 10 === 2 && day % 100 !== 12
+        ? 'nd'
+        : day % 10 === 3 && day % 100 !== 13
+          ? 'rd'
+          : 'th'
+    const weekday = date.toLocaleDateString('en-US', { weekday: 'long', timeZone: 'UTC' })
+    const month = date.toLocaleDateString('en-US', { month: 'long', timeZone: 'UTC' })
+    const hour = String(date.getUTCHours() % 12 || 12).padStart(2, '0')
+    const minute = String(date.getUTCMinutes()).padStart(2, '0')
+    const second = String(date.getUTCSeconds()).padStart(2, '0')
+    const period = date.getUTCHours() >= 12 ? 'PM' : 'AM'
+    epochElement.textContent = String(epoch)
+    humanElement.textContent = `${weekday}, ${month} ${day}${ordinal}, ${date.getUTCFullYear()} ${hour}:${minute}:${second} ${period}`
+    error.hidden = true
+    return true
+  }
+
+  const requested = Number(new URLSearchParams(window.location.search).get('epoch'))
+  showEpoch(requested || Math.floor(Date.now() / 1000))
+
+  const updateNow = () => {
+    const epoch = Math.round(Date.now() / 1000)
+    const link = document.querySelector<HTMLAnchorElement>('#now-link')!
+    link.href = `?epoch=${epoch}`
+    link.textContent = String(epoch)
+  }
+  updateNow()
+  window.setInterval(updateNow, 1000)
+
+  document.querySelector<HTMLFormElement>('#epoch-form')!.addEventListener('submit', (event) => {
+    event.preventDefault()
+    const epoch = Number(input.value)
+    if (showEpoch(epoch)) history.replaceState(null, '', `?epoch=${epoch}`)
+    else error.hidden = false
+  })
+</script>

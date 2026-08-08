@@ -1,3 +1,6 @@
+@use "colors" as *;
+@use "mixins" as *;
+
 .blog-list {
   &__date {
     color: $gray;

@@ -1,0 +1,29 @@
+---
+import ProjectCard from '../../components/ProjectCard.astro'
+import BaseLayout from '../../layouts/BaseLayout.astro'
+
+const lang = (name: string, slug = name.toLowerCase()) => ({ name, slug })
+const projects = [
+  { slug: 'sms', title: 'SMS', href: 'https://github.com/dummycode/sms', description: 'A system to store contacts and send mass text messages via Twilio.', languages: [lang('JavaScript', 'js'), lang('HTML'), lang('CSS')] },
+  { slug: 'pace', title: 'Pace Calculator', href: '/projects/pace', description: 'Calculate how fast you need to run to set a new PR.', languages: [lang('HTML'), lang('JavaScript', 'js')] },
+  { slug: 'rustos', title: 'RustOS', href: 'https://github.com/dummycode/rustos', description: 'An Operating System for Raspberry Pi 3 B+ written in Rust.', languages: [lang('Rust'), lang('C')] },
+  { slug: 'quick-queue', title: 'Quick Queue', href: 'https://github.com/dummycode/quick-queue', description: "A Node.js backed API for queueing sytems used in Georgia Tech's College of Computing office hours.", languages: [lang('JavaScript', 'js'), lang('HTML'), lang('CSS')] },
+  { slug: 'w2g', title: 'W2G Playground', href: 'https://github.com/dummycode/w2g_playground', description: 'Proof of concept application to aid the warehouse picking process developed for the Vuzix M400 Smart Glasses.', languages: [lang('Java')] },
+  { slug: 'my-website', title: 'My Website', href: 'https://github.com/dummycode/website', description: 'How ironic, showcasing my website on my website. Extremely vanilla -- preprocessed stylesheets using <a href="https://sass-lang.com/">Sass</a> and precompiled HTML templates using <a href="https://handlebarsjs.com/">Handlebars</a>.', languages: [lang('JavaScript', 'js'), lang('HTML'), lang('CSS')] },
+  { slug: 'westbrook', title: 'Is Westbrook Averaging A Triple Double?', href: '/projects/westbrook', description: 'Want to see if Russell Westbrook is currently averaging a triple double? Click <a href="/projects/westbrook">here</a> for a quick yes/no answer. Data fetched from ESPN after every game.', languages: [lang('Python'), lang('HTML'), lang('JavaScript', 'js')] },
+  { slug: 'cubefield', title: 'Cubefield', href: 'https://github.com/dummycode/cubefield', description: 'An AI trained to play Cubefield through deep reinforcement learning.', languages: [lang('Python')] },
+  { slug: 'plate-mate', title: 'Plate Mate', href: 'https://github.com/dummycode/plate_mate', description: 'iOS Application to keep track of license plates you have seen.', languages: [lang('Swift')] },
+  { slug: 'dino', title: 'Dino', href: 'https://github.com/dummycode/dino', description: "My <strike>worse</strike> version of Google Chrome's offline dinosaur game -- programmed in C for the Nitendo GameBoy Advance (GBA).", languages: [lang('C')] },
+  { slug: 'warranty', title: 'Warranty Countdown', href: 'https://github.com/slantedtable/warranty', description: 'A React Native app designed to aid homeowners and small business owners in tracking warranties.', languages: [lang('JavaScript', 'js')] },
+]
+---
+
+<BaseLayout title="Henry Harris - Projects">
+  <main class="body projects">
+    <div class="projects-favorites">
+      <div class="row">
+        {projects.map((project) => <ProjectCard {...project} />)}
+      </div>
+    </div>
+  </main>
+</BaseLayout>

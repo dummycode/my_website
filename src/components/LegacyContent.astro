@@ -1,0 +1,21 @@
+---
+import { readFileSync } from 'node:fs'
+import { resolve } from 'node:path'
+
+interface Props {
+  source: string
+}
+
+const source = readFileSync(resolve(Astro.props.source), 'utf8')
+const match = source.match(/<body[^>]*>([\s\S]*?)<\/body>/i)
+
+if (!match) {
+  throw new Error(`Could not find a body element in ${Astro.props.source}`)
+}
+
+const content = match[1]
+  .replace(/\s*<div id="sidebar" class="sidebar"><\/div>\s*/gi, '')
+  .replace(/\s*<div id="sidebar-footer--mobile" class="sidebar-footer--mobile"><\/div>\s*/gi, '')
+---
+
+<Fragment set:html={content} />

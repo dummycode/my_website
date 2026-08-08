@@ -1,5 +1,3 @@
-import * as moment from '../utils/moment.min'
-
 let distance = 0;
 let distanceUnit = 'mile';
 let paceUnit = 'mile';
@@ -333,4 +331,3 @@ const calculateAllSplits = (distance, distanceUnit, milliseconds) => {
 
 
 window.calculateCurrentPace = calculateCurrentPace
-

@@ -1,0 +1,12 @@
+/api/objects /api/objects/index.json 200
+/api/objects/ /api/objects/index.json 200
+/api /api/index.json 200
+/api/ /api/index.json 200
+/projects/westbrook/update /projects/westbrook/update/index.json 200
+/projects/westbrook/update/ /projects/westbrook/update/index.json 200
+/track https://share.garmin.com/henryharris 302
+/track/ https://share.garmin.com/henryharris 302
+/sms /projects/sms 301
+/sms/ /projects/sms 301
+/westbrook /projects/westbrook 301
+/westbrook/ /projects/westbrook 301
